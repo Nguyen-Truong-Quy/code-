@@ -1,0 +1,134 @@
+﻿@model ThucHanhLanCuoi.Models.ViewModel.ProductSearchVM
+@using ThucHanhLanCuoi;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        Search
+    </title>
+    <style type="text/css">
+        .search-container {
+            display: flex;
+            flex-wrap: wrap; /* Đảm bảo các phần tử sẽ xuống dòng nếu cần */
+            gap: 10px;
+            justify-content: center; /* Căn giữa các phần tử theo chiều ngang */
+            align-items: center;
+        }
+            .search-container .form-control {
+                flex: 1; /* Các ô input sẽ có chiều rộng bằng nhau */
+                min-width: 150px; 
+            }
+            .search-container button {
+                flex-shrink: 0; 
+                margin-left: 10px;
+            }
+        .SapSep {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px; /* Khoảng cách giữa các mục sắp xếp */
+            flex-wrap: wrap; /* Cho phép phần tử bọc xuống dòng nếu cần */
+            margin: 10px 0;
+        }
+        .sort-block {
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa */
+        }
+
+        .sort-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .sort-options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+           
+        }
+
+        .sort-link {
+            text-decoration: none;
+            color: blue;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .sort-link:hover {
+                background-color: green;
+                color: white;
+            }
+
+    </style>
+</head>
+<body>
+    <header class="ProLisSearch-Bar">
+        @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+        {
+            <div class="form-group search-container">
+                @Html.TextBoxFor(m => m.SearchTerm, new
+                {
+                    @class = "form-control",
+                    placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
+                })
+                @*Tìm kiếm theo khoảng giá*@
+                @Html.TextBoxFor(m => m.MinPrice, new
+                {
+                    @class = "form-control",
+                    placeholder = "Nhập giá tối thiểu",
+                    type = "number"
+                })
+                @Html.TextBoxFor(m => m.MaxPrice, new
+                {
+                    @class = "form-control",
+                    placeholder = "Nhập giá tối đa",
+                    type = "number"
+                })
+                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            </div>
+        }
+    </header>
+
+    <!--Tùy chọn sắp xếp  -->
+    <div class="sort-block">
+        <div class="sort-title">SẮP SẾP THEO</div>
+        <div class="sort-options">
+            @Html.ActionLink("Tên tăng dần", "Index", "Products",
+                new { sortOrder = "name_asc", searchTerm = Model.SearchTerm, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice },
+                new { @class = "sort-link" })
+            <span>|</span>
+            @Html.ActionLink("Tên giảm dần", "Index", "Products",
+                new { sortOrder = "name_desc", searchTerm = Model.SearchTerm, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice },
+                new { @class = "sort-link" })
+            <span>|</span>
+            @Html.ActionLink("Giá tăng dần", "Index", "Products",
+                new { sortOrder = "price_asc", searchTerm = Model.SearchTerm, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice },
+                new { @class = "sort-link" })
+            <span>|</span>
+            @Html.ActionLink("Giá giảm dần", "Index", "Products",
+                new { sortOrder = "price_desc", searchTerm = Model.SearchTerm, minPrice = Model.MinPrice, maxPrice = Model.MaxPrice },
+                new { @class = "sort-link" })
+        </div>
+    </div>
+
+    @*Form kết quả tìm kiếm*@
+    @Html.Partial("PVListProduct", Model)
+</body>
+
+</html>

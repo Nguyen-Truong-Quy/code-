@@ -1,0 +1,59 @@
+﻿
+@model ThucHanhLanCuoi.Models.Product
+
+
+<head>
+    <style>
+        /* Đặt kích thước cho hình ảnh */
+        .product-image img {
+            height: 150px;
+            max-width: 150px;
+            display: block; /* Giúp hình ảnh căn giữa theo chiều dọc trong cột */
+            margin: auto;
+        }
+
+        /* Định dạng bố cục sản phẩm */
+        .product-details {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* Khoảng cách giữa ảnh và phần chi tiết */
+        }
+
+        /* Định dạng danh sách chi tiết sản phẩm */
+        .product-info dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-info dd {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+
+<div class="container-fluid">
+    <div class="product-details">
+        <!-- Phần hình ảnh sản phẩm -->
+        <div class="product-image col-md-3">
+            <img src="@Html.DisplayFor(model => model.ProductImage)" alt="Product Image" />
+        </div>
+
+        <!-- Phần chi tiết sản phẩm -->
+        <div class="product-info col-md-9">
+            <dl>
+                <dt>Tên sản phẩm</dt>
+                <dd>@Html.DisplayFor(model => model.ProductName)</dd>
+
+                <dt>Đơn giá</dt>
+                <dd>@Html.DisplayFor(model => model.ProductPrice)</dd>
+
+                <dt>Mô tả</dt>
+                <dd>@Html.DisplayFor(model => model.ProductDescription)</dd>
+
+                <dt>Danh mục</dt>
+                <dd>@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+

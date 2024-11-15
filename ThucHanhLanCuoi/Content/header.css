@@ -1,0 +1,178 @@
+﻿/* General Header Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Top Header */
+.Top-Header {
+    background-color: #0a3a70;
+    padding: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.Logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-vn {
+    font-size: 40px;
+    color: red;
+}
+
+/* Search Bar */
+.ThanhTimKiem {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 12px 0 0 12px;
+    outline: none;
+    width: 100%;
+    border: none;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #0d4a91;
+    color: white;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+}
+
+.searchICON {
+    font-size: 16px;
+}
+
+/* Top Menu */
+.Menu-Top {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* Account Section */
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.account i {
+    font-size: 24px;
+}
+
+.account-title, .login-link, .register-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.account-title {
+    font-size: 18px;
+}
+
+.account-subtitle {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.account span {
+    line-height: 1;
+}
+
+/* Cart Icon */
+.store {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.store::after {
+    content: '0';
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+/* Bottom Header */
+.header-bottom {
+    background-color: #0a3a70;
+    padding: 20px;
+}
+
+/* Shoe Category List */
+.MucLucGiay {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+
+.MucLucGiay li {
+    display: flex;
+    align-items: center;
+}
+
+.MucLucGiay li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Labels */
+.label {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 4px;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: white;
+}
+
+.label.new {
+    background-color: #4caf50;
+}
+
+.label.sale {
+    background-color: #e53935;
+}
+
+/* Email and Blog Icons */
+.icon-sale {

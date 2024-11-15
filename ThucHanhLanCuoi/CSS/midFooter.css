@@ -1,0 +1,56 @@
+﻿.footer-container {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử trong footer */
+    justify-content: space-between; /* Phân bổ không gian đều giữa các phần tử con */
+    background-color: #0c385f; /* Thiết lập màu nền cho footer */
+    padding: 20px; /* Thêm khoảng cách bên trong cho footer */
+    color: white; /* Thiết lập màu chữ cho tất cả các phần tử trong footer */
+}
+
+.footer-block {
+    padding: 10px; /* Thêm khoảng cách bên trong cho từng khối footer */
+}
+
+.footer-about {
+    flex: 5; /* Đặt chiều rộng của khối giới thiệu bằng 5 phần trong tổng số */
+}
+
+.footer-links,
+.footer-customer,
+.footer-certificates {
+    flex: 3; /* Đặt chiều rộng của các khối liên kết, khách hàng, và chứng nhận bằng 3 phần trong tổng số */
+}
+
+.footer-block h3 {
+    font-size: 16px; /* Thiết lập kích thước phông chữ cho tiêu đề h3 trong footer */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới tiêu đề h3 */
+    font-weight: bold; /* Đặt tiêu đề h3 thành chữ in đậm */
+}
+
+.footer-block p,
+.footer-block ul {
+    font-size: 14px; /* Thiết lập kích thước phông chữ cho các đoạn văn và danh sách trong footer */
+}
+
+.footer-block ul {
+    list-style: none; /* Loại bỏ dấu đầu dòng trong danh sách */
+    padding: 0; /* Loại bỏ khoảng cách bên trong của danh sách */
+}
+
+    .footer-block ul li {
+        margin-bottom: 5px; /* Thêm khoảng cách dưới mỗi mục trong danh sách */
+    }
+
+        .footer-block ul li a {
+            color: white; /* Thiết lập màu chữ cho liên kết trong danh sách */
+            text-decoration: none; /* Loại bỏ gạch chân khỏi liên kết */
+        }
+
+            .footer-block ul li a:hover {
+                text-decoration: underline; /* Thêm gạch chân khi di chuột qua liên kết */
+            }
+
+.footer-certificates img {
+    display: block; /* Đặt hình ảnh dưới dạng khối để ngăn chặn các khoảng trống không mong muốn */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới hình ảnh */
+    width: 100px; /* Đặt chiều rộng cho hình ảnh bằng 100px */
+}

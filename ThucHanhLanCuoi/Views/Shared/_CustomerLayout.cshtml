@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/header.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="Top-Header">
+        <div class="Logo">
+            <a href="/">
+                <span class="logo-text">Myshoes</span>
+                <span class="logo-vn">.vn</span>
+            </a>
+        </div>
+        <div class="ThanhTimKiem">
+            <input type="text" placeholder="Tìm Kiếm Sản Phẩm" />
+            <button type="submit">
+                <i class="searchICON">&#128269;</i>
+            </button>
+        </div>
+        <div class="Menu-Top">
+            <a href="#" class="account">
+                <i class="fas fa-user"></i>
+                <div>
+                    @Html.ActionLink("Tài khoản", "Account", "Home", null, new { @class = "account-title" })
+                    <span class="account-subtitle">
+                        @Html.ActionLink("Đăng nhập", "Login", "Account", null, new { @class = "login-link" })
+
+                        @Html.ActionLink("Đăng ký", "Register", "Account", null, new { @class = "register-link" })
+                    </span>
+                </div>
+            </a>
+            <a href="@Url.Action("Order", "Checkout")" class="store login-link">
+                <i class="fas fa-shopping-cart"></i> Checkout
+            </a>
+
+        </div>
+
+    </header>
+
+    <div class="header-bottom">
+        <ul class="MucLucGiay">
+            <li>
+                @Html.ActionLink("Giày Nike", "TrangNike", "Home", null, new { @class = "product-link" })
+                <span class="label new">New</span>
+            </li>
+            <li>
+                @Html.ActionLink("Giày Adidas", "TrangAdidas", "Home", null, new { @class = "product-link" })
+                <span class="label sale">Sale</span>
+            </li>
+            <li>
+                @Html.ActionLink("Giày Lacoste", "TrangLacoste", "Home", null, new { @class = "product-link" })
+                <span class="label new">New</span>
+            </li>
+            <li>
+                @Html.ActionLink("Giày Puma", "TrangPuma", "Home", null, new { @class = "product-link" })
+                <span class="label sale">Sale</span>
+            </li>
+            <li>
+                @Html.ActionLink("Giày Asics", "TrangAsics", "Home", null, new { @class = "product-link" })
+                <span class="label new">New</span>
+            </li>
+            <li>
+                @Html.ActionLink("Giày Thể Thao", "TrangGiayTheThao", "Home", null, new { @class = "product-link" })
+            </li>
+            <li>
+                @Html.ActionLink("Sale", "TrangShare", "Home", null, new { @class = "product-link" })
+                <span class="icon-sale">%</span>
+            </li>
+            <li style="margin-left: auto; margin-right: 5px;">
+                <span><i class='icon-email'>&#9993;</i></span>
+                @Html.ActionLink(" Liên Hệ", "Lienhe", "Home", null, new { @class = "nav-link" })
+            </li>
+            <li>
+                <span><i class='icon-blog'>&#9998;</i></span>
+                @Html.ActionLink("Blog", "TrangBlog", "Home", null, new { @class = "nav-link" })
+            </li>
+        </ul>
+        @RenderBody()
+
+    </div>
+</body>
+</html>

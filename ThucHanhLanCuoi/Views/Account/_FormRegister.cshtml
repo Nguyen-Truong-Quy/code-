@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "_FormRegister";
+}
+
+@model ThucHanhLanCuoi.Models.ViewModel.RegisterVM
+<style type="text/css">
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .text-danger {
+        color: red;
+    }
+
+    .container {
+        width: 50%;
+        margin: auto;
+    }
+</style>
+<div class="form-group">
+    @Html.LabelFor(m => m.CustomerName)
+    @Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.CustomerName, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.CustomerEmail)
+    @Html.TextBoxFor(m => m.CustomerEmail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.CustomerEmail, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.CustomerPhone)
+    @Html.TextBoxFor(m => m.CustomerPhone, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.CustomerPhone, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+</div>
+
+
+<button type="submit" class="btn btn-primary">Đăng Ký</button>
+
+
+
+

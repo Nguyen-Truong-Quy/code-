@@ -1,0 +1,93 @@
+﻿@using PagedList.Mvc
+@model ThucHanhLanCuoi.Models.ViewModel.HomeProductVM
+
+@if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
+{
+    <section class="container-fluid featureProd">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="feature-container">
+            @foreach (var product in Model.FeaturedProducts)
+            {
+                <div class="product-item">
+                    <a href="@Url.Action("ProductDetails", "Home", new { id = product.ProductID })">
+                        <img src="@Html.DisplayFor(modelItem => product.ProductImage)" alt="Product Image" />
+                    </a>
+                    <div class="product-info">
+                        <p class="prodName">@Html.DisplayFor(modelItem => product.ProductName)</p>
+                        <p class="prodCate">@Html.DisplayFor(modelItem => product.Category.CategoryName)</p>
+                        <p class="prodPrice">@Html.DisplayFor(modelItem => product.ProductPrice)</p>
+                        <p class="prodSale">Đã bán:&nbsp;@Html.DisplayFor(modelItem => product.OrderDetails.Count)</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+else
+{
+    <p>Không tìm được sản phẩm nào phù hợp.</p>
+}
+
+<style type="text/css">
+    .feature-container {
+        display: flex;
+        overflow-x: auto; /* Tạo thanh cuộn ngang */
+        gap: 10px; /* Khoảng cách giữa các sản phẩm */
+        padding: 10px;
+        scroll-snap-type: x mandatory; /* Tạo hiệu ứng cuộn mượt */
+    }
+
+    .product-item {
+        min-width: 180px; /* Độ rộng cho từng ô sản phẩm */
+        border: 1px solid #ddd; /* Đường viền cho từng khối sản phẩm */
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #f9f9f9; /* Màu nền cho sản phẩm */
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng cho sản phẩm */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        scroll-snap-align: start; /* Căn chỉnh sản phẩm dừng lại khi cuộn */
+    }
+
+        .product-item img {
+            width: 120px; /* Kích thước ảnh sản phẩm */
+            height: 120px;
+            object-fit: cover; /* Cắt ảnh cho phù hợp với khung */
+            margin-bottom: 10px;
+        }
+
+    .product-info {
+        text-align: center;
+    }
+
+    .prodName {
+        font-size: 16px;
+        margin: 5px 0;
+        max-width: 150px;
+        max-height: 40px;
+        overflow: hidden;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .prodCate {
+        font-size: 14px;
+        color: #777;
+        margin: 5px 0;
+    }
+
+    .prodPrice {
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    .prodSale {
+        font-size: 14px;
+        color: #555;
+    }
+</style>

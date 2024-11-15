@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+@using ThucHanhLanCuoi.Models
+@model ThucHanhLanCuoi.Models.Customer
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Tài Khoản</title>
+    <link href="~/Content/profile.css" rel="stylesheet" />
+    <script src="~/Scripts/profile.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <h2>Thông Tin Tài Khoản</h2>
+
+            <div>
+                <label>Tên người dùng:</label>
+                <span>@Session["Username"]</span>
+            </div>
+
+            <div>
+                <label>Vai trò:</label>
+                <span>@Session["UserRole"]</span>
+            </div>
+
+            <div>
+                <label>Email:</label>
+                <span>@Model.CustomerEmail</span>
+            </div>
+
+            <div>
+                <label>Số điện thoại:</label>
+                <span>@Model.CustomerPhone</span>
+            </div>
+
+            <div>
+                <label>Địa chỉ:</label>
+                <span>@Model.CustomerAddress</span>
+            </div>
+
+            <div>
+                <a href="@Url.Action("Logout", "Account")" class="btn-logout">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

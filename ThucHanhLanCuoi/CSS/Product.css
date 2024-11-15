@@ -1,0 +1,218 @@
+﻿/* Bố cục hình ảnh sản phẩm ở giữa */
+.product-images {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các hình ảnh theo hàng */
+    justify-content: center; /* Căn giữa các hình ảnh */
+    gap: 10px; /* Khoảng cách giữa các hình ảnh */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+    .product-images img {
+        flex: 0 1 30%; /* Điều chỉnh tỷ lệ chiều rộng cho hình ảnh */
+        max-width: 400px; /* Giới hạn chiều rộng tối đa của hình ảnh */
+        margin: 0 5px; /* Khoảng cách giữa các hình ảnh */
+        border-radius: 5px; /* Bo góc cho các hình ảnh */
+        transition: transform 0.3s; /* Hiệu ứng chuyển tiếp khi hover */
+    }
+
+        .product-images img.large-img {
+            flex: 0 1 40%; /* Hình giữa sẽ lớn hơn một chút */
+        }
+
+        .product-images img:hover {
+            transform: scale(1.05); /* Phóng to hình ảnh khi hover */
+        }
+.product-name {
+    text-align: center; /* Căn giữa tên sản phẩm */
+    font-weight: bold; /* Chữ đậm */
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+}
+/* Phong cách cho danh sách sản phẩm */
+ul {
+    list-style-type: none; /* Bỏ dấu đầu dòng */
+    padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Thanh tìm kiếm nhanh */
+.product-list {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử theo hàng */
+    justify-content: space-between; /* Căn giữa các mục trong danh sách */
+    padding: 10px; /* Khoảng cách bên trong cho ul */
+    list-style-type: none; /* Bỏ dấu đầu dòng */
+    transition: transform 0.3s; /* Hiệu ứng chuyển động nhẹ khi di chuột */
+}
+
+.left-items, .right-items {
+    display: flex; /* Sử dụng Flexbox cho các nhóm */
+}
+
+    .left-items li {
+        background-color: #f1f1f1; /* Màu nền cho từng mục */
+        padding: 15px; /* Khoảng cách bên trong */
+        border-radius: 5px; /* Bo góc */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+        margin: 0 10px; /* Khoảng cách bên trái và bên phải */
+        text-align: center; /* Căn giữa nội dung trong từng mục */
+        transition: transform 0.3s; /* Hiệu ứng phóng to nhẹ */
+    }
+
+        .left-items li:hover {
+            transform: scale(1.05); /* Phóng to 5% khi di chuột */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
+        }
+
+    /* Phong cách cho giỏ hàng và tài khoản */
+    .right-items li {
+        background-color: #3b5998; /* Màu nền cho giỏ hàng và tài khoản */
+        color: white; /* Màu chữ */
+        padding: 15px; /* Khoảng cách bên trong */
+        border-radius: 5px; /* Bo góc */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+        margin: 0 10px; /* Khoảng cách giữa các mục */
+        text-align: center; /* Căn giữa nội dung trong từng mục */
+        transition: transform 0.3s; /* Hiệu ứng phóng to nhẹ */
+    }
+
+        .right-items li:hover {
+            transform: scale(1.05); /* Phóng to 5% khi di chuột */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn khi hover */
+        }
+
+/* Phong cách cho footer */
+footer {
+    background-color: #3b5998; /* Màu nền của footer */
+    color: white; /* Màu chữ */
+    text-align: center; /* Căn giữa nội dung */
+    padding: 15px; /* Khoảng cách bên trong */
+    position: relative; /* Để footer nằm dưới cùng */
+    bottom: 0; /* Dính đáy */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền khi hover */
+}
+
+    footer:hover {
+        background-color: #334d7a; /* Đổi màu nhạt hơn khi di chuột */
+    }
+
+/* Phong cách cho các tiêu đề */
+h1, h2 {
+    color: #333; /* Màu chữ cho tiêu đề */
+    margin: 10px 0; /* Khoảng cách bên trên và bên dưới */
+}
+
+.new-products-title h1, .new-products-title h2 {
+    font-size: 28px; /* Kích thước chữ lớn cho tiêu đề sản phẩm mới */
+    font-weight: 700; /* Chữ đậm */
+}
+
+/* Khoảng cách cho các đoạn văn */
+p {
+    line-height: 1.5; /* Tăng khoảng cách giữa các dòng */
+    margin: 10px 0; /* Khoảng cách bên trên và bên dưới */
+}
+
+/* CSS cho phần sản phẩm mới */
+.products-section {
+    margin: 20px; /* Khoảng cách bên ngoài */
+}
+
+.new-products-title {
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách phía dưới tiêu đề */
+    font-size: 24px; /* Kích thước chữ tiêu đề */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.new-products {
+    display: flex; /* Sử dụng Flexbox để dễ dàng quản lý hàng hóa */
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng nếu không đủ không gian */
+    justify-content: space-between; /* Đảm bảo khoảng cách đều giữa các sản phẩm */
+}
+
+/* Thêm hiệu ứng chuyển cảnh cho mục sản phẩm khi hover */
+.product-item {
+    position: relative;
+    width: calc(20% - 20px); /* Đảm bảo mỗi sản phẩm chiếm 20% chiều rộng, trừ khoảng cách */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng phóng to và đổ bóng */
+}
+
+    /* Tạo hiệu ứng phóng to và nổi bật mục sản phẩm */
+    .product-item:hover {
+        transform: scale(1.05); /* Phóng to mục sản phẩm khi hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng nổi bật */
+    }
+
+/* Phóng to hình ảnh khi hover vào mục sản phẩm */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Hiệu ứng phóng to cho hình ảnh */
+}
+
+/* Phóng to riêng hình ảnh khi hover */
+.product-item:hover .product-image {
+    transform: scale(1.1); /* Phóng to riêng hình ảnh khi hover */
+}
+.original-price {
+    color: #999; /* Màu xám cho giá gốc */
+    text-decoration: line-through; /* Gạch ngang */
+}
+
+.current-price {
+    color: #d9534f; /* Màu đỏ cho giá hiện tại */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.line-through {
+    text-decoration: line-through; /* Gạch ngang cho giá gốc */
+}
+
+.current-price-value {
+    color: #d9534f; /* Màu đỏ cho giá hiện tại */
+    font-weight: bold; /* Chữ đậm */
+}
+
+
+
+.labels {
+    position: absolute; /* Để định vị các nhãn */
+    top: 10px; /* Khoảng cách từ trên */
+    left: 10px; /* Khoảng cách từ bên trái */
+}
+
+.label {
+    background-color: #007bff; /* Màu nền của nhãn */
+    color: white; /* Màu chữ trắng */
+    padding: 5px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo góc cho nhãn */
+    font-size: 12px; /* Kích thước chữ nhỏ */
+    margin-bottom: 5px; /* Khoảng cách giữa các nhãn */
+}
+
+.product-image {
+    max-width: 100%; /* Hình ảnh tự động điều chỉnh kích thước */
+    height: auto; /* Giữ tỷ lệ */
+    border-radius: 10px; /* Bo góc cho hình ảnh */
+    transition: transform 0.3s ease; /* Hiệu ứng phóng to mượt mà */
+}
+
+.product-item:hover .product-image {
+    transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+}
+
+.discount-percentage {
+    color: #d9534f; /* Màu chữ đỏ cho giảm giá */
+    font-weight: bold; /* Chữ đậm */
+    margin-top: 10px; /* Khoảng cách phía trên */
+}
+/* Hiệu ứng hover phóng to hình ảnh sản phẩm */
+.product-item:hover .product-image {
+    transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+    transition: transform 0.3s ease; /* Thời gian và hiệu ứng chuyển đổi */
+}

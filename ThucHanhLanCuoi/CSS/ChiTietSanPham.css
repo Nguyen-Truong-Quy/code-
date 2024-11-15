@@ -1,0 +1,212 @@
+﻿/* Tổng quát */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Khu vực hình ảnh sản phẩm */
+.product-images {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 40%;
+}
+
+.image-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .image-thumbnails img {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: border 0.3s;
+    }
+
+        .image-thumbnails img:hover {
+            border-color: #333;
+        }
+
+.main-image {
+    flex-grow: 1;
+}
+
+    .main-image img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+/* Huy hiệu (badge) */
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.badge-new {
+    background-color: red;
+}
+
+.badge-arrival {
+    background-color: blue;
+}
+
+/* Chi tiết sản phẩm */
+.product-details {
+    width: 60%;
+    padding-left: 20px;
+}
+
+    .product-details h1 {
+        font-size: 24px;
+        color: #333;
+    }
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #FFD700;
+    margin: 10px 0;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.current-price {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.discount {
+    color: green;
+    font-weight: bold;
+}
+
+.availability {
+    font-size: 14px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.size-selection, .quantity-selection {
+    margin: 20px 0;
+}
+
+    .size-selection label,
+    .quantity-selection label {
+        font-weight: bold;
+    }
+
+    .size-selection button,
+    .quantity-selection select {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .size-selection button:hover {
+            background-color: #f0f0f0;
+        }
+
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.add-to-cart, .buy-now {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buy-now {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.buy-now:hover {
+    background-color: #c82333;
+}
+
+/* Tại sao chọn MyShoes */
+.why-choose {
+    margin-top: 30px;
+}
+
+    .why-choose h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .why-choose ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .why-choose li {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+        .why-choose li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: green;
+        }
