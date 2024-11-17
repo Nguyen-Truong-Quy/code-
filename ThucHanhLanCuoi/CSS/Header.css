@@ -1,0 +1,206 @@
+﻿/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Top Header */
+.Top-Header {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo */
+.Logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.logo-text {
+    color: #007bff;
+}
+
+.logo-vn {
+    color: #ff5722;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* Thanh tìm kiếm */
+.ThanhTimKiem {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+    .ThanhTimKiem input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 20px 0 0 20px;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .ThanhTimKiem button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .ThanhTimKiem button:hover {
+            background-color: #0056b3;
+        }
+
+/* Menu Top */
+.Menu-Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+    .Menu-Top a {
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+        .Menu-Top a:hover {
+            color: #007bff;
+        }
+
+    .Menu-Top .account {
+        position: relative;
+    }
+
+    .Menu-Top .account-title {
+        font-weight: bold;
+    }
+
+    .Menu-Top .account-subtitle {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .Menu-Top .account:hover .account-subtitle {
+        display: block;
+    }
+
+/* Header Bottom */
+.header-bottom {
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.MucLucGiay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+    .MucLucGiay li {
+        position: relative;
+    }
+
+    .MucLucGiay .product-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .MucLucGiay .product-link:hover {
+            color: #007bff;
+            transform: scale(1.1);
+        }
+
+    .MucLucGiay .label {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #28a745;
+        color: white;
+        padding: 3px 6px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+        .MucLucGiay .label.sale {
+            background-color: #dc3545;
+        }
+
+    /* Icon Sale */
+    .MucLucGiay .icon-sale {
+        font-size: 18px;
+        color: #ff5722;
+    }
+
+/* Footer links */
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .ThanhTimKiem {
+        flex-direction: column;
+    }
+
+    .Menu-Top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-bottom ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -2,10 +2,10 @@
 @{
     Layout = "~/Views/Shared/_CustomerLayout.cshtml";
 }
-
+@using ThucHanhLanCuoi.Models
 <div class="container">
     <div class="right-section">
-        <h2>Đăng ký tài khoản</h2>  
+        <h2>Đăng ký tài khoản</h2>
         <link href="~/CSS/Register.css" rel="stylesheet" />
         @using (Html.BeginForm("Register", "Account", FormMethod.Post))
         {

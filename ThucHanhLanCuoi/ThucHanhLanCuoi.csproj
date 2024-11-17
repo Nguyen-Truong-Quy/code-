@@ -220,13 +220,12 @@
     <Content Include="CSS\ChinhSachDoiTra.css" />
     <Content Include="CSS\ChiTietSanPham.css" />
     <Content Include="CSS\CoHoiViecLam.css" />
-    <Content Include="CSS\dangki.css" />
-    <Content Include="CSS\dangnhap.css" />
     <Content Include="CSS\DanhGiaSanPham.css" />
     <Content Include="CSS\DKVSD.css" />
     <Content Include="CSS\footer.css" />
     <Content Include="CSS\giohangstye.css" />
     <Content Include="CSS\HDSD.css" />
+    <Content Include="CSS\Header.css" />
     <Content Include="CSS\LienHeCSS.css" />
     <Content Include="CSS\midFooter.css" />
     <Content Include="CSS\PagedList.css" />
@@ -234,7 +233,6 @@
     <Content Include="CSS\ProductTrungBai.css" />
     <Content Include="CSS\Register.css" />
     <Content Include="Content\GioHang.css" />
-    <Content Include="Content\header.css" />
     <Content Include="Content\IMG\Adidas\GIÀY ADIDAS ADVANCOURT BASE NAM NỮ - TRẮNG XANH LÁ.jpg" />
     <Content Include="Content\IMG\Adidas\GIÀY ADIDAS GALAXY 7 NAM - TRẮNG XÁM.jpg" />
     <Content Include="Content\IMG\Adidas\GIÀY ADIDAS GALAXY 7 NAM - ĐEN TRẮNG - Copy.jpg" />
@@ -284,7 +282,7 @@
     <Content Include="Content\IMG\Puma\Puma RSX Reinvention ‘Red Blast’ 369579-01.png" />
     <Content Include="Content\IMG\Puma\Puma Tyakasha x RS-X ‘Whisper White’ 371027-01.png" />
     <Content Include="Content\IMG\Puma\Puma x Kang Daniel RS-X3 375170-26.jpg" />
-    <Content Include="Content\Login.css" />
+    <Content Include="CSS\Login.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="CSS\ThanhICON.css" />
     <Content Include="CSS\TrangBlogCSS.css" />
@@ -369,7 +367,6 @@
     <Content Include="Views\CustomerHome\TrangChu_Customer.cshtml" />
     <Content Include="Views\Account\_FormRegister.cshtml" />
     <Content Include="Views\Account\GetProfile.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Order\Checkout.cshtml" />
@@ -391,6 +388,8 @@
     <Content Include="Views\Home\footerGioiThieu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\ChinhSachDoiTra.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\InfoAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

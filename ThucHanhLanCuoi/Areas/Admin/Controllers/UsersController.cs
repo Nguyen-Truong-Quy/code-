@@ -126,13 +126,37 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         }
 
         // POST: Admin/Users/Delete/5
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+            // Kiểm tra xem người dùng có tồn tại không
             User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+            if (user != null)
+            {
+                // Kiểm tra xem có bản ghi nào trong bảng Customer tham chiếu đến người dùng này không
+                var relatedCustomers = db.Customers.Where(c => c.Username == user.Username).ToList();
+
+                if (relatedCustomers.Any())
+                {
+                    // Xử lý các bản ghi liên quan trong bảng Customer (xóa hoặc cập nhật)
+                    foreach (var customer in relatedCustomers)
+                    {
+                        // Cách 1: Xóa các bản ghi liên quan
+                        db.Customers.Remove(customer);
+
+                        // Hoặc cách 2: Cập nhật bản ghi liên quan (Ví dụ: Đặt Username thành null hoặc một giá trị khác)
+                        // customer.Username = null; // Hoặc cập nhật theo cách khác
+                        // db.Entry(customer).State = EntityState.Modified;
+                    }
+                }
+
+                // Sau khi xử lý các bản ghi liên quan, xóa người dùng
+                db.Users.Remove(user);
+                db.SaveChanges();
+            }
+
             return RedirectToAction("Index");
         }
 

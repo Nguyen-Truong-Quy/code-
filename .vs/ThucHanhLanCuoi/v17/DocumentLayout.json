@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -31,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\home\\tranglacoste.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\tranglacoste.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -47,7 +47,7 @@
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\trangasics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\home\\tranggiaythethao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\home\\tranggiaythethao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\tranggiaythethao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -79,11 +79,11 @@
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\home\\chinhsachbaomat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\home\\chinhsachbaomat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\chinhsachbaomat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -99,7 +99,7 @@
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\content\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\views\\home\\chinhsachdoitra.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\views\\home\\chinhsachdoitra.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\home\\chinhsachdoitra.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -107,15 +107,15 @@
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\css\\chinhsachdoitra.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\css\\chinhsachdoitra.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\css\\chinhsachdoitra.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\css\\chinhsachbaomat.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\css\\chinhsachbaomat.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\css\\chinhsachbaomat.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|e:\\thuc hanh lap trinh web\\thuchanhlancuoi\\thuchanhlancuoi\\css\\trangblogcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\thuchanhlancuoi\\css\\trangblogcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{90C0635E-9262-49B7-8C09-6694B5696F86}|ThucHanhLanCuoi\\ThucHanhLanCuoi.csproj|solutionrelative:thuchanhlancuoi\\css\\trangblogcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
@@ -362,7 +362,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -374,20 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrangChu_Customer.cshtml",
-              "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
-              "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
-              "ToolTip": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
-              "RelativeToolTip": "ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T02:23:00.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "OrderController.cs",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Controllers\\OrderController.cs",
@@ -395,25 +382,24 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Controllers\\OrderController.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAA5wGAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T02:28:32.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T02:28:32.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\Account\\Login.cshtml",
               "ToolTip": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-12T02:55:19.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Areas\\Admin\\Views\\Categories\\Index.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Areas\\Admin\\Views\\Categories\\Index.cshtml",
@@ -421,12 +407,11 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Areas\\Admin\\Views\\Categories\\Index.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T17:38:18.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:38:18.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "_AdminLayout.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
@@ -434,12 +419,11 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T17:36:48.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:36:48.715Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "_PVFeatureProduct.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Shared\\_PVFeatureProduct.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\Shared\\_PVFeatureProduct.cshtml",
@@ -447,25 +431,36 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Shared\\_PVFeatureProduct.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T01:51:55.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T01:51:55.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "_CustomerLayout.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\Shared\\_CustomerLayout.cshtml",
               "ToolTip": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Shared\\_CustomerLayout.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-12T00:33:38.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "TrangChu_Customer.cshtml",
+              "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
+              "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
+              "ToolTip": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
+              "RelativeToolTip": "ThucHanhLanCuoi\\Views\\CustomerHome\\TrangChu_Customer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T02:23:00.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Checkout.cshtml",
               "DocumentMoniker": "E:\\Thuc Hanh Lap Trinh WEB\\ThucHanhLanCuoi\\ThucHanhLanCuoi\\Views\\Order\\Checkout.cshtml",
               "RelativeDocumentMoniker": "ThucHanhLanCuoi\\Views\\Order\\Checkout.cshtml",
@@ -473,8 +468,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Order\\Checkout.cshtml",
               "ViewState": "AgIAAEMAAAAAAAAAAAAAAEwAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T04:19:04.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T04:19:04.459Z"
             },
             {
               "$type": "Document",
@@ -486,8 +480,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangAdidas.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:09:53.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:09:53.128Z"
             },
             {
               "$type": "Document",
@@ -499,8 +492,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangAsics.cshtml",
               "ViewState": "AgIAAAEAAAAAAAAAAAAgwAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:26.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:26.251Z"
             },
             {
               "$type": "Document",
@@ -512,8 +504,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangLacoste.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:34.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:34.543Z"
             },
             {
               "$type": "Document",
@@ -525,8 +516,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangPuma.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:48.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:48.561Z"
             },
             {
               "$type": "Document",
@@ -538,8 +528,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangGiayTheThao.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T03:06:46.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T03:06:46.676Z"
             },
             {
               "$type": "Document",
@@ -551,8 +540,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Controllers\\CartController.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswEQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T02:20:17.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T02:20:17.681Z"
             },
             {
               "$type": "Document",
@@ -564,8 +552,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\LienHe.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T02:58:42.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:58:42.296Z"
             },
             {
               "$type": "Document",
@@ -577,8 +564,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangNike.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:45.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:45.343Z"
             },
             {
               "$type": "Document",
@@ -590,8 +576,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangSale.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:55.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:55.729Z"
             },
             {
               "$type": "Document",
@@ -603,8 +588,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Content\\header.css",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-12T00:34:31.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:34:31.487Z"
             },
             {
               "$type": "Document",
@@ -616,8 +600,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\TrangBlog.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:10:07.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:10:07.147Z"
             },
             {
               "$type": "Document",
@@ -629,8 +612,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\ChinhSachBaoMat.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T02:46:55.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:46:55.582Z"
             },
             {
               "$type": "Document",
@@ -642,8 +624,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAA/wGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:32:52.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:32:52.351Z"
             },
             {
               "$type": "Document",
@@ -655,8 +636,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Models\\Order.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T06:10:25.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T06:10:25.422Z"
             },
             {
               "$type": "Document",
@@ -668,8 +648,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Content\\Login.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-15T01:51:20.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:51:20.945Z"
             },
             {
               "$type": "Document",
@@ -681,8 +660,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Home\\ChinhSachDoiTra.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T02:33:06.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:33:06.136Z"
             },
             {
               "$type": "Document",
@@ -694,8 +672,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Cart\\Index.cshtml",
               "ViewState": "AgIAAIcAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T02:58:21.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T02:58:21.693Z"
             },
             {
               "$type": "Document",
@@ -707,8 +684,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\CSS\\ChinhSachDoiTra.css",
               "ViewState": "AgIAAEcAAAAAAAAAAAAAwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-15T02:33:36.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:33:36.851Z"
             },
             {
               "$type": "Document",
@@ -744,8 +720,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\Views\\Shared\\_Footer.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T01:57:59.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T01:57:59.689Z"
             },
             {
               "$type": "Document",
@@ -757,8 +732,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\CSS\\TrangBlogCSS.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-15T02:35:42.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:35:42.662Z"
             },
             {
               "$type": "Document",
@@ -770,8 +744,7 @@
               "RelativeToolTip": "ThucHanhLanCuoi\\CSS\\ChinhSachBaoMat.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-15T02:36:13.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T02:36:13.791Z"
             },
             {
               "$type": "Document",

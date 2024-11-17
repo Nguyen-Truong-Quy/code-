@@ -56,8 +56,15 @@ namespace ThucHanhLanCuoi.Controllers
                 };
                 db.Customers.Add(customer);
                 // luu thong tin tai khoan vao csdl
-                db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Lỗi khi lưu dữ liệu: " + ex.Message);
+                }
+                return RedirectToAction("Login", "Account");
             }
             return View(model);
         }
@@ -110,6 +117,10 @@ namespace ThucHanhLanCuoi.Controllers
         {
             Session.Clear();
             return RedirectToAction("Login", "Account");
+        }
+        public ActionResult InfoAccount()
+        {
+            return View();
         }
 
     }

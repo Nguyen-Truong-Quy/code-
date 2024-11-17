@@ -87,19 +87,6 @@
                     @class = "form-control",
                     placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
                 })
-                @*Tìm kiếm theo khoảng giá*@
-                @Html.TextBoxFor(m => m.MinPrice, new
-                {
-                    @class = "form-control",
-                    placeholder = "Nhập giá tối thiểu",
-                    type = "number"
-                })
-                @Html.TextBoxFor(m => m.MaxPrice, new
-                {
-                    @class = "form-control",
-                    placeholder = "Nhập giá tối đa",
-                    type = "number"
-                })
                 <button type="submit" class="btn btn-primary">Tìm kiếm</button>
             </div>
         }

@@ -6,11 +6,13 @@ using System.Web;
 
 namespace ThucHanhLanCuoi.Models.ViewModel
 {
+
     public class RegisterVM // Lưu thông tin form đăng ký
     {
         [Required]
         [Display(Name = "Tên đăng nhập")]
         public string Username { get; set; }
+
 
         [Required]
         [DataType(DataType.Password)]
