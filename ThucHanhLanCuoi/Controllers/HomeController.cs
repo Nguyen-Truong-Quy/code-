@@ -94,63 +94,38 @@ namespace ThucHanhLanCuoi.Controllers
         //model.RelatedProducts = products.OrderBy(p => p.ProductID).Take(8).ToPagedList(pageNumber, pageSize);
         //model.TopProducts = products.OrderByDescending(p => p.OrderDetails.Count()).Take(8).ToPagedList(pageNumber, pageSize);
 
-        public ActionResult TrangNike()
-        {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-        public ActionResult TrangBlog()
-        {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
+        //===================================================================================
         public ActionResult LienHe()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangAdidas()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangAsics()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangGiayTheThao()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangLacoste()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangPuma()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult TrangSale()
-        {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Liên hệ chúng tôi.";
 
             return View();
         }
         public ActionResult ChinhSachDoiTra()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult ChinhSachBaoMat()
+        {
+        
+            return View();
+        }
+        public ActionResult DieuKhoanVaSuDung()
+        {
+
+            return View();
+        }
+        public ActionResult CoHoiViecLam()
+        {
+
+            return View();
+        }
+        public ActionResult footerGioiThieu()
+        {
 
             return View();
         }

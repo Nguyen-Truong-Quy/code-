@@ -82,35 +82,32 @@ namespace ThucHanhLanCuoi.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra thông tin đăng nhập (username, password)
                 var user = db.Users.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
-
                 if (user != null)
                 {
-                    // Kiểm tra vai trò của người dùng
-                    if (user.UserRole == "N") // Nếu là admin
-                    {
-                        // Lưu thông tin người dùng vào Session hoặc Cookie (tùy thuộc vào yêu cầu)
-                        Session["UserRole"] = user.UserRole;
-                        Session["Username"] = user.Username;
+                    // Lưu trạng thái đăng nhập vào Session
+                  
+                    Session["Username"] = user.Username;
 
-                        // Chuyển hướng đến trang AdminHome/Index
+                    // Kiểm tra vai trò và chuyển hướng tương ứng
+                    if (user.UserRole == "N") // Admin
+                    {
                         return RedirectToAction("Index", "AdminHome", new { area = "Admin" });
                     }
                     else
                     {
-                        // Nếu không phải là admin, chuyển hướng đến trang người dùng bình thường
+                        Session["login"] = true;
                         return RedirectToAction("TrangChu_Customer", "CustomerHome");
                     }
                 }
                 else
                 {
-                    // Nếu thông tin đăng nhập không hợp lệ
                     ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng.");
                 }
             }
             return View(model);
         }
+
 
         //GET: Account/Logout
         public ActionResult Logout()
@@ -120,8 +117,56 @@ namespace ThucHanhLanCuoi.Controllers
         }
         public ActionResult InfoAccount()
         {
+            // Kiểm tra nếu người dùng đã đăng nhập
+            if (Session["Username"] != null)
+            {
+                string username = Session["Username"].ToString();
+                var user = db.Users.FirstOrDefault(u => u.Username == username);
+                if (user != null)
+                {
+                    return View(user);  // Trả về thông tin người dùng
+                }
+            }
+            return RedirectToAction("Login", "Account");
+        }
+        // GET: Account/ChangePassword
+        [Authorize] // Yêu cầu người dùng phải đăng nhập
+        public ActionResult ChangePassword()
+        {
             return View();
         }
 
+        // POST: Account/ChangePassword
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(ChangePassword model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Lấy thông tin người dùng từ Session
+                var username = User.Identity.Name; // Tên người dùng đang đăng nhập
+                var user = db.Users.FirstOrDefault(u => u.Username == username);
+
+                if (user != null)
+                {
+                    // Kiểm tra mật khẩu cũ
+                    if (user.Password == model.OldPassword)
+                    {
+                        // Cập nhật mật khẩu mới
+                        user.Password = model.NewPassword;
+                        db.SaveChanges();
+
+                        TempData["SuccessMessage"] = "Mật khẩu đã được thay đổi thành công.";
+                        return RedirectToAction("TrangTaiKhoan", "Account"); // Chuyển hướng đến trang tài khoản
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Mật khẩu cũ không đúng.");
+                    }
+                }
+            }
+
+            return View(model);
+        }
     }
 }

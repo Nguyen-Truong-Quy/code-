@@ -1,52 +1,48 @@
 ﻿@model IEnumerable<ThucHanhLanCuoi.Models.User>
 
 @{
-    ViewBag.Title = "Thông tin ";
+    ViewBag.Title = "Quản lý người dùng";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-<div aligh-item="center">
-    <h2>Thông tin </h2>
-    <h2> Tài Khoản-Mật Khẩu</h2>
+
+<div class="container">
+    <h2>Quản lý người dùng</h2>
+
+    <div class="sort-options">
+        <span>Sắp xếp theo:</span>
+        @Html.ActionLink("Tên tăng dần", "Index", new { sortOrder = "" }, new { @class = "sort-link" })
+        <span>|</span>
+        @Html.ActionLink("Tên giảm dần", "Index", new { sortOrder = "name_desc" }, new { @class = "sort-link" })
+    </div>
+
+    <p>
+        @Html.ActionLink("Tạo tài khoản mới", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Tài Khoản</th>
+                <th>Mật Khẩu</th>
+                <th>Phân Quyền</th>
+                <th>Chức Năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.Password</td>
+                    <td>@user.UserRole</td>
+                    <td>
+                        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = user.Username }, new { @class = "btn btn-warning btn-sm" }) |
+                        @Html.ActionLink("Chi tiết", "Details", new { id = user.Username }, new { @class = "btn btn-info btn-sm" }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = user.Username }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-
-
-<p>
-    @Html.ActionLink("Tạo 1 thông account", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Tài Khoản
-        </th>
-        <th>
-            Mật Khẩu
-        </th>
-        <th>
-            Phân Quyền
-        </th>
-        <th>
-            Chức năng
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserRole)
-            </td>
-            <td>
-                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Username }, new { @class = "text-danger" }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.Username }, new { @class = "text-danger" }) |
-                @Html.ActionLink("Xóa", "Delete", new { id = item.Username }, new { @class = "text-danger" })
-            </td>
-        </tr>
-    }
-
-</table>
+qqqq

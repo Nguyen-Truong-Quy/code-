@@ -25,7 +25,7 @@ namespace ThucHanhLanCuoi.Models
         public string Username { get; set; }
         [Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp.")]
         public string Password { get; set; }
-        public string UserRole { get; set; }
+        public string UserRole { get; set; }    
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }

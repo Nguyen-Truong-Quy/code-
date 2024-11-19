@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "TrangBlog6";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giày Thể Thao</title>
+    <style>
+/* Cài đặt cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Đặt font chữ chung */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Tiêu đề chính */
+header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Đoạn mô tả chung */
+header p {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Phần chính của mỗi section */
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề phụ */
+section h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Danh sách */
+ul {
+    list-style-type: none;
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+ul li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+ul li strong {
+    color: #16a085;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+/* Responsive design */
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section h3 {
+        font-size: 1.4em;
+    }
+
+    ul li {
+        font-size: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Giới Thiệu Về Giày Thể Thao</h1>
+            <p>Giày thể thao ngày nay không chỉ phục vụ cho các hoạt động thể dục thể thao mà còn là một item thời trang phổ biến.</p>
+        </header>
+
+        <section id="intro">
+            <h2>1. Giới Thiệu Về Giày Thể Thao</h2>
+            <p>Ngay từ tên gọi “giày thể thao” đã bộc lộ rõ nó là gì rồi đúng không nào? Giày thể thao là những đôi giày được sử dụng trong các hoạt động thể dục thể thao, hay trong những hoạt động tập luyện tăng cường sức khoẻ. Tuy nhiên, ngày này giày thể thao còn được coi như một item không thể thiếu khi đi chơi, đi làm bởi tính tiện dụng mà vẫn thời trang của nó.</p>
+            <p>Vậy vai trò của giày thể thao là gì? Không phải tự nhiên mà giày thể thao được dùng khi chúng ta vận động, luyện tập. Thật vậy, so với các loại giày khác, giày thể thao sở hữu những tính năng vượt trội hơn, phù hợp hơn cho những hoạt động tập luyện: thiết kế êm chân hơn, thoải mái hơn, thoáng mát hơn, ôm chân và bảo vệ bàn chân an toàn hơn,...</p>
+            <p>Bên cạnh công nghệ và những tính năng tuyệt vời, các thế hệ giày thể thao ngày nay ra đời ngày càng chú trọng hơn về thiết kế, dáng vẻ, màu sắc. Chính vì thế, giày thể thao không những được sử dụng khi tập luyện mà còn được sử dụng trong hoạt động thường ngày, thậm chí là cho mục đích thời trang. Thêm vào đó, ngày nay, xu hướng thời trang được ưa chuộng hơn cả là xu hướng năng động, vậy nên giày thể thao ngày càng có nhiều đất diễn. Không ngoa khi nói rằng, trên thế giới này, người người nhà nhà ai cũng sở hữu ít nhất một đôi giày thể thao.</p>
+        </section>
+
+        <section id="history">
+            <h2>2. Lịch Sử Hình Thành và Phát Triển Của Giày Thể Thao</h2>
+            <p>Bạn đã bao giờ tự hỏi những đôi giày thể thao có mặt trên thế giới này từ bao giờ chưa? Trước khi chúng có được thời hoàng kim như ngày nay, những đôi giày thể thao đã từng có một quá khứ rất đồ sộ và huy hoàng đấy. Cùng điểm qua một số dấu mốc đáng chú ý trong lịch sử giày thể thao nói chung nhé!</p>
+            <ul>
+                <li><strong>Cuối thế kỷ 18:</strong> Đôi giày thể thao đầu tiên xuất hiện, chủ yếu được làm từ cao su và không phân biệt đâu là giày trái hay phải.</li>
+                <li><strong>1892:</strong> Công ty cao su Hoa Kì sản xuất giày thể thao với đế cao su và phần upper từ vải.</li>
+                <li><strong>1917:</strong> Giày thể thao bắt đầu được sản xuất hàng loạt và có tên gọi "Sneakers". Cùng năm, Marquis Converse ra mắt đôi giày bóng rổ Converse All-Stars.</li>
+                <li><strong>1924:</strong> Adi Dassler tạo ra đôi giày thể thao mang tên Adidas, đánh dấu sự ra đời của thương hiệu Adidas.</li>
+                <li><strong>1971:</strong> Nike được thành lập và nhanh chóng nổi bật với đôi giày Air Jordan.</li>
+            </ul>
+        </section>
+
+        <section id="brands">
+            <h2>3. Các Thương Hiệu Giày Thể Thao Nổi Tiếng</h2>
+            <p>Lịch sử giày thể thao gắn liền với sự ra đời của hàng loạt những cái tên thương hiệu nổi tiếng cho đến tận ngày nay. Bạn biết những thương hiệu giày thể thao gì rồi nào? Điểm qua cùng Myshoes nhé!</p>
+            <ul>
+                <li><strong>Nike</strong> - Được thành lập vào năm 1971, nổi tiếng với dòng giày Air Jordan và Air Max.</li>
+                <li><strong>Adidas</strong> - Thành lập năm 1948, nổi bật với dòng giày chạy bộ và bóng đá.</li>
+                <li><strong>Puma</strong> - Thương hiệu giày thể thao của Đức, nổi tiếng với các mẫu giày thể thao có thiết kế sáng tạo.</li>
+                <li><strong>Reebok</strong> - Thương hiệu giày thể thao của Anh, tập trung vào giày chạy và thể dục dụng cụ.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Myshoes - Tất cả quyền lợi thuộc về chủ sở hữu.</p>
+        </footer>
+    </article>
+</body>
+</html>
+

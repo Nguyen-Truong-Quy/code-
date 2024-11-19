@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -254,17 +254,22 @@
                     <span class="account-links" style="color: white;">Đăng nhập - Đăng ký</span>
                 </div>
                 <div class="accountBox">
-                    @if (User.Identity.IsAuthenticated)
+                    @if (Session["login"] != null && (bool)Session["login"] == true)
                     {
-                        <a href="@Url.Action("TrangTaiKhoan", "Account")" class="account-title">Tài khoản</a>
+                        <!-- Nếu người dùng chưa đăng nhập -->
+                        <a href="@Url.Action("InfoAccount", "Account")" class="account-links">Thông tin tài khoản</a>
                         <a href="@Url.Action("Logout", "Account")" class="account-links">Đăng xuất</a>
+
                     }
                     else
                     {
+
+                        <!-- Nếu người dùng đã đăng nhập -->      
                         <a href="@Url.Action("Login", "Account")" class="account-links">Đăng nhập</a>
                         <a href="@Url.Action("Register", "Account")" class="account-links">Đăng ký</a>
                     }
                 </div>
+
             </div>
             <a href="@Url.Action("Cart", "Store")" class="store">
                 <i class="fas fa-shopping-cart"></i>
@@ -276,17 +281,17 @@
     <!-- Bottom Header -->
     <div class="header-bottom">
         <ul class="MucLucGiay">
-            <li><a href="@Url.Action("TrangNike", "Home", new { brand = "Nike" })">Giày Nike</a> <span class="label new">New</span></li>
-            <li><a href="@Url.Action("TrangAdidas", "Home", new { brand = "Adidas" })">Giày Adidas</a> <span class="label sale">Sale</span></li>
-            <li><a href="@Url.Action("TrangLacoste", "Home", new { brand = "Lacoste" })">Giày Lacoste</a> <span class="label new">New</span></li>
-            <li><a href="@Url.Action("TrangPuma", "Home", new { brand = "Puma" })">Giày Puma</a> <span class="label sale">Sale</span></li>
-            <li><a href="@Url.Action("TrangAsics", "Home", new { brand = "Asics" })">Giày Asics</a> <span class="label new">New</span></li>
-            <li><a href="@Url.Action("TrangGiayTheThao", "Home", new { category = "Sports" })">Giày Thể Thao</a></li>
-            <li><a href="@Url.Action("TrangSale", "Home", new { sale = true })">Sale</a> <span class="icon-sale">%</span></li>
+            <li><a href="@Url.Action("TrangNike", "TrangGiay", new { brand = "Nike" })">Giày Nike</a> <span class="label new">New</span></li>
+            <li><a href="@Url.Action("TrangAdidas", "TrangGiay", new { brand = "Adidas" })">Giày Adidas</a> <span class="label sale">Sale</span></li>
+            <li><a href="@Url.Action("TrangLacoste", "TrangGiay", new { brand = "Lacoste" })">Giày Lacoste</a> <span class="label new">New</span></li>
+            <li><a href="@Url.Action("TrangPuma", "TrangGiay", new { brand = "Puma" })">Giày Puma</a> <span class="label sale">Sale</span></li>
+            <li><a href="@Url.Action("TrangAsics", "TrangGiay", new { brand = "Asics" })">Giày Asics</a> <span class="label new">New</span></li>
+            <li><a href="@Url.Action("TrangGiayTheThao", "TrangGiay", new { category = "Sports" })">Giày Thể Thao</a></li>
+            <li><a href="@Url.Action("TrangSale", "TrangGiay", new { sale = true })">Sale</a> <span class="icon-sale">%</span></li>
         </ul>
         <div class="Right-Menu">
             <a href="@Url.Action("LienHe", "Home")"><i class="fas fa-envelope"></i> Liên Hệ</a>
-            <a href="@Url.Action("TrangBlog", "Home")"><i class="fas fa-pen"></i> Blog</a>
+            <a href="@Url.Action("TrangBlog", "Blog")"><i class="fas fa-pen"></i> Blog</a>
         </div>
     </div>
 

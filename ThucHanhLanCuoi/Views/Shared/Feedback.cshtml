@@ -1,0 +1,96 @@
+﻿<!-- Views/Shared/_Footer.cshtml -->
+    <link rel="stylesheet" href="~/CSS/footer.css">
+    <link rel="stylesheet" href="~/CSS/Product.css">
+    <style>
+        .grid-rows {
+            display: flex; /* Đặt flexbox cho container */
+            overflow: hidden; /* Ẩn các phần tử vượt ra ngoài */
+        }
+
+        .grid-items {
+            display: flex; /* Đặt flexbox cho phần tử con */
+            overflow: hidden; /* Ẩn các phần tử vượt ra ngoài */
+        }
+
+        .swiper-wrapper {
+            display: flex; /* Sử dụng flexbox để sắp xếp các slide theo hàng ngang */
+            transition: transform 500ms ease; /* Cảm giác chuyển động mượt mà khi di chuyển */
+        }
+
+        .module-item {
+            flex-shrink: 0; /* Không cho phép thu nhỏ phần tử khi co giãn */
+            width: 362.5px; /* Đặt chiều rộng cố định cho mỗi item */
+            margin-right: 20px; /* Khoảng cách giữa các item */
+        }
+
+        .block-body {
+            margin-bottom: 20px;
+        }
+
+        .block-header img {
+            width: 100%; /* Đảm bảo ảnh phủ toàn bộ chiều rộng */
+            height: auto;
+        }
+
+        .block-content {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .block-footer {
+            padding-top: 10px;
+            font-style: italic;
+        }
+    </style>
+    <h2>FeedBack#</h2>
+    <div class="grid-rows">
+        <div class="grid-items">
+            <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 500ms;">
+                <div class="module-item module-item-1 swiper-slide swiper-slide-visible swiper-slide-active" style="width: 362.5px; margin-right: 20px;">
+                    <div class="block-body">
+                        <div class="block-header">
+                            <img src="https://myshoes.vn/image/cache/catalog/lookbook/IMG_181711-500x500.jpg.webp">
+                        </div>
+                        <div class="block-content block-text">
+                            <p>Tôi đã mua cho cả 2 vợ chồng giày của Myshoes.vn và thật sự nó vô cùng chất lượng. Hàng đảm bảo chính hãng 100% và chính sách bảo hành rất yên tâm ạ. Cảm ơn Myshoes.vn!</p>
+                        </div>
+                        <div class="block-footer"><p>- Chị Thanh Thủy -</p></div>
+                    </div>
+                </div>
+                <div class="module-item module-item-2 swiper-slide swiper-slide-visible swiper-slide-active" style="width: 362.5px; margin-right: 20px;">
+                    <div class="block-body">
+                        <div class="block-header">
+                            <img src="https://myshoes.vn/image/cache/catalog/lookbook/IMG_1816-500x500.JPG.webp">
+                        </div>
+                        <div class="block-content block-text">
+                            <p>Myshoes.vn bán hàng chính hãng, giá rất ok, tôi đã mua một đôi giày chạy bộ của Nike đi rất êm và thích.</p>
+                        </div>
+                        <div class="block-footer"><p>- Anh Nam -</p></div>
+                    </div>
+                </div>
+                <div class="module-item module-item-3 swiper-slide swiper-slide-visible swiper-slide-active" style="width: 362.5px; margin-right: 20px;">
+                    <div class="block-body">
+                        <div class="block-header">
+                            <img src="https://myshoes.vn/image/cache/catalog/lookbook/IMG_1061-500x500.jpg.webp">
+                        </div>
+                        <div class="block-content block-text">
+                            <p>Mua hàng của Myshoes.vn thì rất yên tâm rồi, mình mua luôn 2 đôi vì nhiều mẫu đẹp quá! Sẽ ủng hộ shop thường xuyên.</p>
+                        </div>
+                        <div class="block-footer"><p>- Anh Huy Hùng -</p></div>
+                    </div>
+                </div>
+                <div class="module-item module-item-4 swiper-slide swiper-slide-visible swiper-slide-active" style="width: 362.5px; margin-right: 20px;">
+                    <div class="block-body">
+                        <div class="block-header">
+                            <img src="https://myshoes.vn/image/cache/catalog/lookbook/IMG_1064-500x500.jpg.webp">
+                        </div>
+                        <div class="block-content block-text">
+                            <p>Tìm một đôi giày ưng ý không hề dễ dàng, nhưng từ khi biết đến Myshoes.vn thì hoàn toàn tin tưởng, nhiều mẫu đẹp và đã chọn được một em Adidas ưng ý!</p>
+                        </div>
+                        <div class="block-footer"><p>- Anh Đức -</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,42 @@
+﻿@{
+  
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    <h2>Thống kê người dùng</h2>
+
+    <p>
+        <strong>Tổng số người dùng:</strong> @ViewBag.TotalUsers<br />
+        <strong>Số lượng Admin:</strong> @ViewBag.AdminCount (@ViewBag.AdminPercentage%)<br />
+        <strong>Số lượng Customer:</strong> @ViewBag.CustomerCount (@ViewBag.CustomerPercentage%)<br />
+    </p>
+
+    <div style="width: 300px; height: 300px; margin: auto;">
+        <canvas id="userStatisticsChart"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('userStatisticsChart').getContext('2d');
+        var userChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Admin', 'Customer'],
+                datasets: [{
+                    data: [@ViewBag.AdminPercentage, @ViewBag.CustomerPercentage],
+                    backgroundColor: ['#36A2EB', '#FF6384'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+}

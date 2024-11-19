@@ -1,34 +1,52 @@
-﻿@model ThucHanhLanCuoi.Models.User
-
+﻿@model ThucHanhLanCuoi.Models.ViewModel.UserCustomerViewModel
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+@* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" /> *@
+<div class="container mt-4">
+    <!-- Tiêu đề chính -->
+    <h1 class="mb-4">Chi tiết người dùng: <span class="text-primary">@Model.User.Username</span></h1>
 
-<h2>Details</h2>
+    <!-- Thông tin người dùng -->
+    <div class="mb-4">
+        <h3 class="text-info">Thông tin khách hàng:</h3>
+        <div class="list-group">
+            @foreach (var customer in Model.Customers)
+            {
+                <div class="list-group-item">
+                    <strong>Tên khách hàng:</strong> @customer.CustomerName <br />
+                    <strong>Số điện thoại:</strong> @customer.CustomerPhone <br />
+                    <strong>Email:</strong> @customer.CustomerEmail <br />
+                    <strong>Địa chỉ:</strong> @customer.CustomerAddress
+                </div>
+            }
+        </div>
+    </div>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserRole)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserRole)
-        </dd>
-
-    </dl>
+    <!-- Bảng thông tin khách hàng -->
+    <div>
+        <h3 class="text-info">Danh sách khách hàng:</h3>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tên đăng nhập</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model.Customers)
+                {
+                    <tr>
+                        <td>@customer.Username</td>
+                        <td>@customer.CustomerPhone</td>
+                        <td>@customer.CustomerEmail</td>
+                        <td>@customer.CustomerAddress</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Username }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

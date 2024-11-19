@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using ThucHanhLanCuoi.Models;
+using ThucHanhLanCuoi.Models.ViewModel;
+
 
 namespace ThucHanhLanCuoi.Areas.Admin.Controllers
 {
@@ -16,87 +15,85 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         private QuanLyEntities db = new QuanLyEntities();
 
         // GET: Admin/Users
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Users.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var users = db.Users.AsQueryable();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    users = users.OrderByDescending(u => u.Username);
+                    break;
+                default:
+                    users = users.OrderBy(u => u.Username);
+                    break;
+            }
+
+            return View(users.ToList());
         }
 
         // GET: Admin/Users/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
+
+            var user = db.Users.Include("Customers").FirstOrDefault(u => u.Username == id);
             if (user == null)
-            {
                 return HttpNotFound();
-            }
-            return View(user);
+
+            var viewModel = new UserCustomerViewModel
+            {
+                User = user,
+                Customers = user.Customers.ToList()
+            };
+
+            return View(viewModel);
         }
 
         // GET: Admin/Users/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Admin/Users/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Username,Password,UserRole")] User user)
         {
             if (ModelState.IsValid)
             {
-                try
+                var existingUser = db.Users.FirstOrDefault(u => u.Username == user.Username);
+                if (existingUser != null)
                 {
-                    var existingUser = db.Users.FirstOrDefault(u => u.Username == user.Username);
-                    if (existingUser != null)
-                    {
-                        // Thêm lỗi vào ModelState nếu Username đã tồn tại
-                        ModelState.AddModelError("Username", "Tên đăng nhập đã tồn tại.");
-                        return View(user);
-                    }
-                    // Gán vai trò mặc định là "N" (admin) khi tạo tài khoản mới.
-                    user.UserRole = "N"; // Vai trò "N" cho admin, có thể điều chỉnh nếu cần
-
-                    // Thêm người dùng mới vào cơ sở dữ liệu
-                    db.Users.Add(user);
-                    db.SaveChanges();
-
-                    // Chuyển hướng về trang danh sách người dùng
-                    return RedirectToAction("Index");
+                    ModelState.AddModelError("Username", "Tên đăng nhập đã tồn tại.");
+                    return View(user);
                 }
-                catch (DbEntityValidationException dbEx)
-                {
-                    // Kiểm tra lỗi validation từ Entity Framework
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            ModelState.AddModelError(validationErrors.Entry.Entity.GetType().Name,
-                                validationError.ErrorMessage);
-                        }
-                    }
-                }
+
+                user.UserRole = "N"; // Mặc định vai trò là Admin
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-
-            // Trả về View nếu có lỗi
             return View(user);
         }
-
 
         // GET: Admin/Users/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
+
+            var user = db.Users.Find(id);
             if (user == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(user);
         }
 
         // POST: Admin/Users/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Username,Password,UserRole")] User user)
@@ -114,49 +111,32 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         public ActionResult Delete(string id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
+
+            var user = db.Users.Find(id);
             if (user == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(user);
         }
 
         // POST: Admin/Users/Delete/5
-     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            // Kiểm tra xem người dùng có tồn tại không
-            User user = db.Users.Find(id);
+            var user = db.Users.Find(id);
             if (user != null)
             {
-                // Kiểm tra xem có bản ghi nào trong bảng Customer tham chiếu đến người dùng này không
                 var relatedCustomers = db.Customers.Where(c => c.Username == user.Username).ToList();
-
-                if (relatedCustomers.Any())
+                foreach (var customer in relatedCustomers)
                 {
-                    // Xử lý các bản ghi liên quan trong bảng Customer (xóa hoặc cập nhật)
-                    foreach (var customer in relatedCustomers)
-                    {
-                        // Cách 1: Xóa các bản ghi liên quan
-                        db.Customers.Remove(customer);
-
-                        // Hoặc cách 2: Cập nhật bản ghi liên quan (Ví dụ: Đặt Username thành null hoặc một giá trị khác)
-                        // customer.Username = null; // Hoặc cập nhật theo cách khác
-                        // db.Entry(customer).State = EntityState.Modified;
-                    }
+                    db.Customers.Remove(customer);
                 }
 
-                // Sau khi xử lý các bản ghi liên quan, xóa người dùng
                 db.Users.Remove(user);
                 db.SaveChanges();
             }
-
             return RedirectToAction("Index");
         }
 
@@ -168,5 +148,30 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Statistics()
+        {
+            // Tổng số lượng người dùng
+            int totalUsers = db.Users.Count(); // Thay 'db.Users' bằng DbSet của bạn
+
+            // Đếm số lượng Admin
+            int adminCount = db.Users.Count(u => u.UserRole == "N");
+
+            // Đếm số lượng Customer
+            int customerCount = db.Users.Count(u => u.UserRole == "C");
+
+            // Tính phần trăm
+            double adminPercentage = totalUsers > 0 ? (adminCount * 100.0 / totalUsers) : 0;
+            double customerPercentage = totalUsers > 0 ? (customerCount * 100.0 / totalUsers) : 0;
+
+            // Gửi dữ liệu qua ViewBag
+            ViewBag.AdminPercentage = Math.Round(adminPercentage, 2);
+            ViewBag.CustomerPercentage = Math.Round(customerPercentage, 2);
+            ViewBag.TotalUsers = totalUsers;
+            ViewBag.AdminCount = adminCount;
+            ViewBag.CustomerCount = customerCount;
+
+            return View();
+        }
+
     }
 }
