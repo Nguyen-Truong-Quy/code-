@@ -1,0 +1,85 @@
+﻿body {
+    font-family: Arial, sans-serif; /* Thiết lập phông chữ cho toàn bộ trang là Arial hoặc sans-serif nếu không có Arial */
+}
+
+h1 {
+    text-align: center; /* Căn giữa tiêu đề h1 */
+}
+
+#cart {
+    width: 50%; /* Đặt chiều rộng của giỏ hàng là 50% chiều rộng của phần chứa */
+    margin: auto; /* Căn giữa giỏ hàng trong viewport */
+    border: 1px solid #ccc; /* Thêm viền xung quanh giỏ hàng với màu xám nhạt */
+    padding: 10px; /* Thêm khoảng cách bên trong cho giỏ hàng */
+}
+
+.cart-item {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các mục trong giỏ hàng */
+    justify-content: space-between; /* Phân bổ không gian giữa các phần tử trong hàng */
+    margin-bottom: 10px; /* Thêm khoảng cách dưới cho mỗi mục trong giỏ hàng */
+}
+
+.item-name, .item-price {
+    width: 30%; /* Đặt chiều rộng cho tên và giá mục là 30% */
+}
+
+.item-quantity {
+    width: 10%; /* Đặt chiều rộng cho số lượng mục là 10% */
+}
+
+.remove-item {
+    background-color: #f44336; /* Thiết lập màu nền cho nút xóa là màu đỏ */
+    color: white; /* Thiết lập màu chữ cho nút xóa là trắng */
+    border: none; /* Không viền cho nút xóa */
+    padding: 5px 10px; /* Thêm khoảng cách bên trong cho nút xóa */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua nút xóa */
+}
+
+#total {
+    text-align: right; /* Căn phải tổng tiền */
+    margin-top: 20px; /* Thêm khoảng cách trên cho tổng tiền */
+}
+
+#checkout {
+    display: block; /* Đặt nút thanh toán dưới dạng khối */
+    width: 100%; /* Đặt chiều rộng cho nút thanh toán bằng 100% */
+    background-color: #4CAF50; /* Thiết lập màu nền cho nút thanh toán là màu xanh lá cây */
+    color: white; /* Thiết lập màu chữ cho nút thanh toán là trắng */
+    border: none; /* Không viền cho nút thanh toán */
+    padding: 10px; /* Thêm khoảng cách bên trong cho nút thanh toán */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua nút thanh toán */
+}
+
+#order-form {
+    margin-top: 20px; /* Thêm khoảng cách trên cho mẫu đơn đặt hàng */
+    border: 1px solid #ccc; /* Thêm viền cho mẫu đơn đặt hàng */
+    padding: 10px; /* Thêm khoảng cách bên trong cho mẫu đơn đặt hàng */
+    width: 50%; /* Đặt chiều rộng cho mẫu đơn đặt hàng là 50% */
+    margin: auto; /* Căn giữa mẫu đơn đặt hàng trong viewport */
+}
+
+    #order-form h2 {
+        text-align: center; /* Căn giữa tiêu đề trong mẫu đơn đặt hàng */
+    }
+
+    #order-form label {
+        display: block; /* Đặt nhãn dưới dạng khối để mỗi nhãn xuất hiện trên một dòng riêng */
+        margin-top: 10px; /* Thêm khoảng cách trên cho nhãn */
+    }
+
+    #order-form input, #order-form select {
+        width: 100%; /* Đặt chiều rộng cho các trường nhập liệu và danh sách chọn bằng 100% */
+        padding: 5px; /* Thêm khoảng cách bên trong cho các trường nhập liệu và danh sách chọn */
+        margin-top: 5px; /* Thêm khoảng cách trên cho các trường nhập liệu và danh sách chọn */
+    }
+
+    #order-form button {
+        display: block; /* Đặt nút dưới dạng khối */
+        width: 100%; /* Đặt chiều rộng cho nút bằng 100% */
+        background-color: #4CAF50; /* Thiết lập màu nền cho nút là màu xanh lá cây */
+        color: white; /* Thiết lập màu chữ cho nút là trắng */
+        border: none; /* Không viền cho nút */
+        padding: 10px; /* Thêm khoảng cách bên trong cho nút */
+        cursor: pointer; /* Thay đổi con trỏ khi di chuột qua nút */
+        margin-top: 20px; /* Thêm khoảng cách trên cho nút */
+    }

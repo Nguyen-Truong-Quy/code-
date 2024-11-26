@@ -17,6 +17,7 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         // GET: Admin/Users
         public ActionResult Index(string sortOrder)
         {
+            //giá trị sắp sếp sẽ được lưu trữ trog viewbag sau đó truyền sang view 
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             var users = db.Users.AsQueryable();
 
@@ -24,6 +25,7 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             {
                 case "name_desc":
                     users = users.OrderByDescending(u => u.Username);
+                    //order by Descending là 1 phương thức Linq dùng để sắp sếp giảm dần
                     break;
                 default:
                     users = users.OrderBy(u => u.Username);
@@ -38,14 +40,15 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         {
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            // nếu người dùng có ID = null trả về lõi HTTP 404
 
             var user = db.Users.Include("Customers").FirstOrDefault(u => u.Username == id);
             if (user == null)
                 return HttpNotFound();
 
-            var viewModel = new UserCustomerViewModel
+            var viewModel = new UserCustomerViewModel //tạo 1 view model hiển thị dữ liệu 
             {
-                User = user,
+                User = user,//truyền thông tin chi tiết người dùng user sang View
                 Customers = user.Customers.ToList()
             };
 
@@ -62,10 +65,11 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Username,Password,UserRole")] User user)
+            //ánh xạ Bind tới các trường Username,Password,UserRole từ dữ liệu gửi lên đối tượng User
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //nếu người dùng đã nhập dữ liệu các trường hợp lệ 
             {
-                var existingUser = db.Users.FirstOrDefault(u => u.Username == user.Username);
+                var existingUser = db.Users.FirstOrDefault(u => u.Username == user.Username);//tạo 1 bản ghi tên đăng nhập
                 if (existingUser != null)
                 {
                     ModelState.AddModelError("Username", "Tên đăng nhập đã tồn tại.");
@@ -73,7 +77,7 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
                 }
 
                 user.UserRole = "N"; // Mặc định vai trò là Admin
-                db.Users.Add(user);
+                db.Users.Add(user); //thêm đói tượng người dùng là user vào Database User
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -169,9 +173,7 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             ViewBag.TotalUsers = totalUsers;
             ViewBag.AdminCount = adminCount;
             ViewBag.CustomerCount = customerCount;
-
             return View();
         }
-
     }
 }

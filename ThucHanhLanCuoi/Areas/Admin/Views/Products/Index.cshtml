@@ -80,7 +80,7 @@
 <body>
     <header class="ProLisSearch-Bar">
         @using (Html.BeginForm("Index", "Products", FormMethod.Get))
-        {
+        {   
             <div class="form-group search-container">
                 @Html.TextBoxFor(m => m.SearchTerm, new
                 {

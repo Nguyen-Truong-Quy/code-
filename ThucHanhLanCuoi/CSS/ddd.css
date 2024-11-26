@@ -1,0 +1,105 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.article-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section {
+    display: flex; /* Sử dụng flexbox để bố cục theo hàng ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Giãn cách giữa chữ và ảnh */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+    .section .text {
+        flex: 1; /* Phần chữ sẽ chiếm toàn bộ không gian còn lại */
+        margin-right: 20px; /* Khoảng cách giữa chữ và ảnh */
+    }
+
+        .section .text h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section .text p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+    .section .image {
+        flex: 0 0 auto; /* Phần ảnh có kích thước cố định */
+    }
+
+        .section .image img {
+            width: 400px; /* Đặt kích thước cố định cho ảnh */
+            height: 350px;
+            object-fit: cover; /* Giữ tỉ lệ hình ảnh */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+/* Đảm bảo phần tử chứa có đủ không gian */
+.product_description_area {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Bố cục Flexbox đảo chiều */
+.description-content {
+    display: flex; /* Sắp xếp các phần tử con (chữ và ảnh) trên một hàng ngang */
+    align-items: center; /* Căn giữa phần tử theo chiều dọc */
+    justify-content: space-between; /* Cân bằng khoảng cách giữa các phần tử */
+    flex-direction: row-reverse; /* Đảo ngược thứ tự của chữ và ảnh */
+}
+
+    /* Phần chữ */
+    .description-content .text {
+        flex: 1; /* Phần chữ chiếm hết không gian còn lại */
+        margin-left: 20px; /* Tạo khoảng cách giữa chữ và ảnh */
+    }
+
+        .description-content .text h1 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .description-content .text p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+    /* Phần ảnh */
+    .description-content .image img {
+        max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử chứa */
+        height: auto; /* Giữ tỉ lệ cho ảnh */
+        border-radius: 8px;
+    }
+
+
+.body-wrapper {
+    background-color: white; /* Nền trắng */
+    padding: 20px; /* Khoảng cách với các phần khác */
+    margin-top: 20px; /* Khoảng cách với header */
+    margin-bottom: 20px; /* Khoảng cách với footer */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+    border-radius: 8px; /* Bo tròn góc */
+}

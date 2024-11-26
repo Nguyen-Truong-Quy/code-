@@ -1,0 +1,154 @@
+﻿@model ThucHanhLanCuoi.Models.ViewModel.ProductDetailVM
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+<link href="~/Content/ChiTiet.css" rel="stylesheet" />
+<head>
+    <style>
+        .khungcho3 {
+            display: flex;
+            grid-template-columns: 100%;
+            gap: 20px;
+            background: #efefef;
+        }
+
+        .chonam {
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .anh {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            background: white;
+            position: sticky;
+            top: 12px;
+            gap: 16px;
+            padding: 16px 0px 12px 0px;
+        }
+
+        .thongtin {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            gap: 4px;
+        }
+
+        .gh {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px 20px;
+        }
+    </style>
+</head>
+@* phần banner *@
+
+
+
+
+@* phần tìm kiếm sản phẩm *@
+<div class="khung">
+    <div class="khung-min">
+        <div class="chiakhung">
+            <div class="khungtotrangchotaikhoan">
+                <div class="khungtrangchutaikhoan">
+                    <div class="trangchu">
+                        <a href=@Url.Action("Index", "Home")>Trang chủ</a>
+                    </div>
+                </div>
+
+                <div class="khungtrangchutaikhoan">
+                    <div class="trangchu">
+                        <a href="@Url.Action("Login","Account",null)">Đăng nhập</a>
+                    </div>
+                </div>
+
+                <div class="goihang">
+                    <div class="trangchu">
+                        <img src="~/Content/anh/giohang.png" />
+                        <a href="@Url.Action("Index","Cart",null)">Giỏ hàng</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="khungcho3">
+
+    <div class="chonam">
+        @* Khối bên trái *@
+        <div class="anh">
+            <img src="@Model.product.ProductImage" />
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        @* Khối ở giữa *@
+        <div class="gh">
+            @* Phần thông tin sản phẩm  *@
+            <div class="thongtin">
+                <h4><strong>Tên sản phẩm: @Html.DisplayFor(model => model.product.ProductName)</strong></h4>
+                <p>Đã bán: &nbsp; @Model.product.OrderDetails.Count</p>
+
+                <p class="pro-price">Gía bán: @Model.product.ProductPrice.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</p>
+                <p>Phân Loại : &nbsp;@Model.product.Category.CategoryName</p>
+                <hr />
+                <h5> <strong>Mô tả: <p>@Model.product.ProductDescription</p> </strong></h5>
+               
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!--Khối bên phải-->
+    <div class="col-md-3 ">
+        <div class="gh">
+            @* Phần tạm tính *@
+            <div class="thongtin">
+                @using (Html.BeginForm("ProductDetails", "Home", FormMethod.Get))
+                {
+                    <h4><strong>Số lượng</strong></h4>
+                    <p>
+                        @Html.TextBoxFor(model => model.quantity, new
+                        {
+                            @class = "form-control",
+                            @type = "number",
+                            @min = 1
+                        })
+                    </p>
+                    <h4><strong>Tạm tính</strong></h4>
+                    <p>@Model.EstimatedValue</p>
+                    <p>
+                        @Html.ActionLink("Thêm vào giỏ hàng", "AddToCart", "Cart",
+                       new { id = Model.product.ProductID, quantity = Model.quantity },
+                       new { @class = "btn btn-info" })
+                    </p>
+                }
+
+                @* Khối realated Product *@
+                @*<div> @Html.Partial("PVRelatedProduct", Model)</div>*@
+            </div>
+        </div>
+
+        @* Khối TopProduct *@
+        @*<div>@Html.Partial("PVTopProduct", Model)</div>*@
+    </div>
+</div>
+

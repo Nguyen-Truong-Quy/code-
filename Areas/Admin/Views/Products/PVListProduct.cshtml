@@ -1,0 +1,192 @@
+﻿@model ThucHanhLanCuoi.Models.ViewModel.ProductSearchVM
+
+@using ThucHanhLanCuoi;
+@using PagedList.Mvc
+
+<head>
+    <link href="~/Areas/Admin/Content/PVlistProduct.css" rel="stylesheet" />
+</head>
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <h2 class="bg-dark text-white text-center p-2">DANH SÁCH SẢN PHẨM</h2>
+
+    <div class="btn-create">
+        @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-success" })
+    </div>
+
+    <table class="bang-danh-sach table-striped table-responsive">
+        <thead>
+            <tr class="bg-success text-white">
+                <th class="col-md-2">Hình ảnh</th>
+                <th class="col-md-3">Tên sản phẩm</th>
+                <th class="col-md-1">Đơn giá</th>
+                <th class="col-md-2">Danh mục</th>
+                <th class="col-md-4">Thao tác</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td><img src="@Html.DisplayFor(modelItem => product.ProductImage)" alt="Hình ảnh sản phẩm" /></td>
+                    <td>@Html.DisplayFor(modelItem => product.ProductName)</td>
+                    <td>@Html.DisplayFor(modelItem => product.FormattedProductPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => product.Category.CategoryName)</td>
+                    <td>
+                        <div class="nhom-nut">
+                            @Html.ActionLink("Cập nhật", "Edit", new { id = product.ProductID }, new { @class = "btn btn-primary btn-sm" })
+                            @Html.ActionLink("Chi tiết", "Details", new { id = product.ProductID }, new { @class = "btn btn-info btn-sm" })
+                            @Html.ActionLink("Xóa", "Delete", new { id = product.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Hiển thị phân trang -->
+    <div class="PhanTrang-PageList">
+        @Html.PagedListPager(
+            Model.Products, // Dữ liệu phân trang (IPagedList)
+            page => Url.Action("Index", new
+            {
+                page, // Tham số trang hiện tại
+                searchTerm = Model.SearchTerm, // Từ khóa tìm kiếm
+                MinPrice = Model.MinPrice, // Giá tối thiểu
+                maxPrice = Model.MaxPrice, // Giá tối đa
+                sortOrder = Model.SortOrder // Sắp xếp
+            }),
+            new PagedListRenderOptions
+            {
+                DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                MaximumPageNumbersToDisplay = 10,
+                LinkToIndividualPageFormat = "{0}",
+                EllipsesFormat = "..."
+            }
+        )
+    </div>
+
+    <!-- CSS để thiết kế phân trang -->
+    <style>
+        .table img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+        }
+        .bang-danh-sach
+        {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+
+        .bang-danh-sach th, .bang-danh-sach td {
+            padding: 15px;
+            text-align: left;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
+
+        .bang-danh-sach th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .bang-danh-sach tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .bang-danh-sach tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .bang-danh-sach img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .nhom-nut a {
+            margin: 5px;
+        }
+
+            .nhom-nut a.nut {
+                padding: 5px 10px;
+                font-size: 14px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+
+        .nhom-nut .nut-cap-nhat {
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            color: white;
+        }
+
+            .nhom-nut .nut-cap-nhat:hover {
+                background-color: #0056b3;
+            }
+
+        .nhom-nut .nut-chi-tiet {
+            background-color: #17a2b8;
+            border: 1px solid #17a2b8;
+            color: white;
+        }
+
+            .nhom-nut .nut-chi-tiet:hover {
+                background-color: #138496;
+            }
+
+        .nhom-nut .nut-xoa {
+            background-color: #dc3545;
+            border: 1px solid #dc3545;
+            color: white;
+        }
+
+            .nhom-nut .nut-xoa:hover {
+                background-color: #c82333;
+            }
+        .PhanTrang-PageList {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #4CAF50; 
+            border-radius: 8px;
+            background-color: #f9f9f9; 
+        }
+
+
+            .PhanTrang-PageList.pagination {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                /* Styling for each pagination link (page number) */
+                .PhanTrang-PageList .pagination li a {
+                    padding: 8px 12px;
+                    text-decoration: none;
+                    color: #4CAF50;
+                    border: 1px solid #4CAF50;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    margin: 0 5px;
+                    background-color: #fff;
+                }
+
+
+    </style>
+}
+else
+{
+    <div class="no-results">Không tìm được sản phẩm nào phù hợp</div>
+}

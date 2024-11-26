@@ -279,6 +279,7 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CustomerHomeController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
+    <Compile Include="Controllers\GiayNikeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\TrangGiayController.cs" />
@@ -357,11 +358,13 @@
     <Content Include="CSS\ChiTietSanPham.css" />
     <Content Include="CSS\CoHoiViecLam.css" />
     <Content Include="CSS\DanhGiaSanPham.css" />
+    <Content Include="CSS\ddd.css" />
     <Content Include="CSS\DKVSD.css" />
     <Content Include="CSS\footer.css" />
     <Content Include="CSS\giohangstye.css" />
     <Content Include="CSS\HDSD.css" />
     <Content Include="CSS\Header.css" />
+    <Content Include="CSS\Layout_Customer.css" />
     <Content Include="CSS\LienHeCSS.css" />
     <Content Include="CSS\midFooter.css" />
     <Content Include="CSS\PagedList.css" />
@@ -549,6 +552,15 @@
     <Content Include="Views\Details\spad7.cshtml" />
     <Content Include="Views\Details\spad8.cshtml" />
     <Content Include="Views\Details\spad9.cshtml" />
+    <Content Include="Views\GiayNike\spnk1.cshtml" />
+    <Content Include="Views\GiayNike\spnk2.cshtml" />
+    <Content Include="Views\GiayNike\spnk3.cshtml" />
+    <Content Include="Views\GiayNike\spnk4.cshtml" />
+    <Content Include="Views\GiayNike\spnk5.cshtml" />
+    <Content Include="Views\GiayNike\spnk6.cshtml" />
+    <Content Include="Views\GiayNike\spnk7.cshtml" />
+    <Content Include="Views\GiayNike\spnk8.cshtml" />
+    <Content Include="Views\GiayNike\spnk9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,6 @@
-﻿@model IEnumerable<ThucHanhLanCuoi.Models.User>
-
+﻿﻿@model IEnumerable<ThucHanhLanCuoi.Models.User>
+@using PagedList
+@using PagedList.Mvc   
 @{
     ViewBag.Title = "Quản lý người dùng";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -44,5 +45,46 @@
             }
         </tbody>
     </table>
+    <!-- Phân trang -->
+    </div>
 </div>
-qqqq
+
+<!-- CSS cho giao diện -->
+<style>
+    .search-box {
+        margin-bottom: 20px;
+    }
+
+    .sort-options {
+        margin-bottom: 15px;
+    }
+
+    .sort-link {
+        text-decoration: none;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination-container .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+            .pagination-container .pagination li a {
+                padding: 8px 12px;
+                text-decoration: none;
+                color: #4CAF50;
+                border: 1px solid #4CAF50;
+                font-weight: bold;
+                border-radius: 5px;
+                margin: 0 5px;
+                background-color: #fff;
+            }
+</style>

@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
-using ThucHanhLanCuoi.Models.ViewModel;
 using ThucHanhLanCuoi.Models;
-using PagedList.Mvc;
+using ThucHanhLanCuoi.Models.ViewModel;
 
 namespace ThucHanhLanCuoi.Controllers
 {
     public class AccountController : Controller
     {
         private QuanLyEntities db = new QuanLyEntities();
-        // GET: Account
+
+        // GET: Account/Register
         public ActionResult Register()
         {
             return View();
@@ -28,7 +24,7 @@ namespace ThucHanhLanCuoi.Controllers
         {
             if (ModelState.IsValid)
             {
-                // kiem tra ten dang nhap
+                // Kiểm tra tên đăng nhập
                 var existingUser = db.Users.SingleOrDefault(u => u.Username == model.Username);
                 if (existingUser != null)
                 {
@@ -36,16 +32,16 @@ namespace ThucHanhLanCuoi.Controllers
                     return View(model);
                 }
 
-                // neu chua ton tai thi tao ban ghi thong tin tk trong bang user
+                // Nếu chưa tồn tại, tạo bản ghi thông tin tài khoản trong bảng User
                 var user = new User
                 {
                     Username = model.Username,
-                    Password = model.Password,
+                    Password = model.Password,  // Mật khẩu không mã hóa
                     UserRole = "C"
-
                 };
                 db.Users.Add(user);
-                // va tao ban ghi thong tin khach hang trong bang customer
+
+                // Tạo bản ghi thông tin khách hàng trong bảng Customer
                 var customer = new Customer
                 {
                     CustomerName = model.CustomerName,
@@ -55,7 +51,8 @@ namespace ThucHanhLanCuoi.Controllers
                     Username = model.Username,
                 };
                 db.Customers.Add(customer);
-                // luu thong tin tai khoan vao csdl
+
+                // Lưu thông tin vào cơ sở dữ liệu
                 try
                 {
                     db.SaveChanges();
@@ -64,12 +61,13 @@ namespace ThucHanhLanCuoi.Controllers
                 {
                     System.Diagnostics.Debug.WriteLine("Lỗi khi lưu dữ liệu: " + ex.Message);
                 }
+
                 return RedirectToAction("Login", "Account");
             }
             return View(model);
         }
-       
 
+        // GET: Account/Login
         public ActionResult Login()
         {
             return View();
@@ -82,11 +80,11 @@ namespace ThucHanhLanCuoi.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Tìm người dùng với tên đăng nhập và mật khẩu (không mã hóa mật khẩu)
                 var user = db.Users.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
                 if (user != null)
                 {
                     // Lưu trạng thái đăng nhập vào Session
-                  
                     Session["Username"] = user.Username;
 
                     // Kiểm tra vai trò và chuyển hướng tương ứng
@@ -108,13 +106,14 @@ namespace ThucHanhLanCuoi.Controllers
             return View(model);
         }
 
-
-        //GET: Account/Logout
+        // GET: Account/Logout
         public ActionResult Logout()
         {
             Session.Clear();
             return RedirectToAction("Login", "Account");
         }
+
+        // GET: Account/InfoAccount
         public ActionResult InfoAccount()
         {
             // Kiểm tra nếu người dùng đã đăng nhập
@@ -129,8 +128,8 @@ namespace ThucHanhLanCuoi.Controllers
             }
             return RedirectToAction("Login", "Account");
         }
+
         // GET: Account/ChangePassword
-        [Authorize] // Yêu cầu người dùng phải đăng nhập
         public ActionResult ChangePassword()
         {
             return View();
@@ -143,26 +142,49 @@ namespace ThucHanhLanCuoi.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Lấy thông tin người dùng từ Session
-                var username = User.Identity.Name; // Tên người dùng đang đăng nhập
-                var user = db.Users.FirstOrDefault(u => u.Username == username);
-
-                if (user != null)
+                // Lấy user hiện tại dựa trên thông tin đăng nhập
+                var user = db.Users.SingleOrDefault(u => u.Username == User.Identity.Name);
+                if (user == null)
                 {
-                    // Kiểm tra mật khẩu cũ
-                    if (user.Password == model.OldPassword)
-                    {
-                        // Cập nhật mật khẩu mới
-                        user.Password = model.NewPassword;
-                        db.SaveChanges();
+                    ModelState.AddModelError("", "Không tìm thấy tài khoản.");
+                    return View(model);
+                }
 
-                        TempData["SuccessMessage"] = "Mật khẩu đã được thay đổi thành công.";
-                        return RedirectToAction("TrangTaiKhoan", "Account"); // Chuyển hướng đến trang tài khoản
+                // Kiểm tra mật khẩu cũ
+                if (user.Password != model.OldPassword)
+                {
+                    ModelState.AddModelError("", "Mật khẩu cũ không đúng.");
+                    return View(model);
+                }
+
+                // Gán mật khẩu mới
+                user.Password = model.NewPassword;
+
+                // Lưu thay đổi
+                try
+                {
+                    db.SaveChanges();  // Lưu vào cơ sở dữ liệu
+
+                    // Kiểm tra nếu đã lưu thành công
+                    if (db.Entry(user).State == EntityState.Modified)
+                    {
+                        // Đổi mật khẩu thành công
+                        TempData["SuccessMessage"] = "Đổi mật khẩu thành công!";
+
+                        // Xóa session cũ và yêu cầu người dùng đăng nhập lại
+                        Session.Clear();
+
+                        // Chuyển hướng đến trang đăng nhập
+                        return RedirectToAction("Login");
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Mật khẩu cũ không đúng.");
+                        TempData["ErrorMessage"] = "Không thể cập nhật mật khẩu!";
                     }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Có lỗi khi lưu mật khẩu: " + ex.Message);
                 }
             }
 

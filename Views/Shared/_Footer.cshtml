@@ -1,0 +1,79 @@
+﻿<!-- Views/Shared/_Footer.cshtml -->
+<footer>
+    <link rel="stylesheet" href="~/CSS/footer.css">
+    <div class="subscribe-container">
+        <div class="ThongTin">
+            <h3>ĐĂNG KÝ NHẬN THÔNG TIN</h3>
+            <p>Đăng ký ngay để được cập nhật sớm nhất những thông tin hữu ích, ưu đãi vô cùng hấp dẫn và những món quà bất ngờ từ Myshoes.vn!</p>
+        </div>
+        <div class="FooterFillForm">
+            <form class="subscribe-form">
+                <input type="email" placeholder="Nhập email của bạn" required>
+                <button type="submit">
+                    <i class="fas fa-envelope"></i> ĐĂNG KÝ
+                </button>
+            </form>
+            <div class="checkboxsite">
+                <input type="checkbox" id="agree" required>
+                <label for="agree">Tôi đã đọc và đồng ý với <a href="#">Chính sách bảo mật</a></label>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/CSS/midFooter.css">
+    <div class="footer-container">
+        <div class="footer-block footer-about">
+            <h3>828, Sư VẠN HẠNH - HUFLIT</h3>
+            <p>HUFLIT được định hướng trở thành trường đại học đào tạo chât lượng hàng đầu Việt Nam.</p>
+            <p>Q10,Hồ Chí Minh</p>
+            <p>Hotline: 0XXX XXX XXX</p>
+        </div>
+        <div class="footer-block footer-links">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <ul>
+                <li>
+                    @Html.ActionLink("giới thiệu", "footerGioiThieu", "Home", null, new { @class = "product-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Điều khoản và sử dụng", "DieuKhoanVaSuDung", "Home", null, new { @class = "product-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Chính sách bảo mật", "ChinhSachBaoMat", "Home", null, new { @class = "product-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Tin Tức MyShoes", "TrangBlog", "Home", null, new { @class = "product-link" })
+
+                </li>
+                <li>
+                    @Html.ActionLink("Cơ hội việc làm", "CoHoiViecLam", "Home", null, new { @class = "product-link" })
+                    
+                </li>
+                <li>
+                    @Html.ActionLink("Liên Hệ", "LienHe", "Home", null, new { @class = "product-link" })
+
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="footer-block footer-customer">
+            <h3>KHÁCH HÀNG</h3>
+            <ul>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li>
+                    @Html.ActionLink("Chính sách đổi trả", "ChinhSachDoiTra_Baomat", "Home", null, new { @class = "product-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Chính sách bảo mật", "ChinhSachDoiTra_Baomat", "Home", null, new { @class = "product-link" })
+                </li>
+              
+                <li><a href="#">Khách hàng thân thiết</a></li>
+                <li><a href="#">Hướng dẫn chọn size</a></li>
+                <li><a href="#">Chương trình khuyến mại</a></li>
+            </ul>
+        </div>
+        <div class="footer-block footer-certificates">
+            <h3>CHỨNG NHẬN</h3>
+            <img src="" alt="DMCA Protection">
+            <img src="" alt="Bộ Công Thương Certification">
+        </div>
+    </div>
+</footer>

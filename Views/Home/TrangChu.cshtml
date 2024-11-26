@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+
+}
+<link href="~/Content/GioHang.css" rel="stylesheet" />
+<link href="~/Content/header.css" rel="stylesheet" />
+<!DOCTYPE html>
+@{
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    <link href="~/Content/GioHang.css" rel="stylesheet" />
+    <link href="~/Content/header.css" rel="stylesheet" />
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng của tôi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3><i class="fas fa-user-circle"></i> Tài khoản của Tú Bùi</h3>
+            <ul>
+                <li><i class="fas fa-user"></i> Thông tin tài khoản</li>
+                <li><i class="fas fa-bell"></i> Thông báo của tôi</li>
+                <li class="active"><i class="fas fa-box"></i> Quản lý đơn hàng</li>
+                <li><i class="fas fa-exchange-alt"></i> Quản lý đổi trả</li>
+                <li><i class="fas fa-map-marker-alt"></i> Sổ địa chỉ</li>
+                <li><i class="fas fa-credit-card"></i> Thông tin thanh toán</li>
+                <li><i class="fas fa-star"></i> Đánh giá sản phẩm</li>
+                <li><i class="fas fa-history"></i> Sản phẩm bạn đã xem</li>
+                <li><i class="fas fa-heart"></i> Sản phẩm yêu thích</li>
+                <li><i class="fas fa-comments"></i> Nhận xét của tôi</li>
+                <li><i class="fas fa-share-alt"></i> Chia sẻ có lời</li>
+                <li><i class="fas fa-shield-alt"></i> Hợp đồng bảo hiểm</li>
+                <li><i class="fas fa-percent"></i> Mã giảm giá</li>
+                <li><i class="fas fa-coins"></i> Astra của bạn</li>
+                <li><i class="fas fa-wallet"></i> Quản lý Tiki Xu của tôi</li>
+                <li><i class="fas fa-book"></i> BookCare của tôi</li>
+                <li><i class="fas fa-headset"></i> Hỗ trợ khách hàng</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h2>Đơn hàng của tôi</h2>
+            <div class="order-tabs">
+                <button class="tab active">Tất cả đơn</button>
+                <button class="tab">Chờ thanh toán</button>
+                <button class="tab">Đang xử lý</button>
+                <button class="tab">Đang vận chuyển</button>
+                <button class="tab">Đã giao</button>
+                <button class="tab">Đã hủy</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm đơn hàng theo Mã đơn hàng, Nhà bán hoặc Tên sản phẩm">
+                <button><i class="fas fa-search"></i> Tìm đơn hàng</button>
+            </div>
+
+            <!-- Order List -->
+            <div class="order-list">
+                <!-- Order Item (Chờ thanh toán) -->
+                <div class="order-item">
+                    <h3><i class="fas fa-clock"></i> Chờ thanh toán</h3>
+                    <div class="product">
+                        <img src="book1.jpg" alt="Book Image">
+                        <div class="product-info">
+                            <p class="product-name">LÀM GIÀU TỪ SIÊU CỔ PHIẾU – Câu Chuyện Của Gã Du Mục Phố Wall</p>
+                            <p class="product-seller"><i class="fas fa-store"></i> PLM Trading</p>
+                        </div>
+                    </div>
+                    <div class="price">399.000 ₫</div>
+                    <div class="button-group">
+                        <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Mua lại</button>
+                        <button class="btn btn-secondary"><i class="fas fa-info-circle"></i> Xem chi tiết</button>
+                    </div>
+                </div>
+
+                <!-- Order Item (Đã hủy) -->
+                <div class="order-item">
+                    <h3><i class="fas fa-ban"></i> Đã hủy</h3>
+                    <div class="product">
+                        <img src="book2.jpg" alt="Book Image">
+                        <div class="product-info">
+                            <p class="product-name">Cây Cam Ngọt Của Tôi</p>
+                            <p class="product-seller"><i class="fas fa-store"></i> Nhà sách Fahasa</p>
+                        </div>
+                    </div>
+                    <div class="price">73.800 ₫</div>
+                    <div class="button-group">
+                        <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Mua lại</button>
+                        <button class="btn btn-secondary"><i class="fas fa-info-circle"></i> Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

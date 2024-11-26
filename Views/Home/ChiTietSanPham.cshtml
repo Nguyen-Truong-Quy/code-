@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giày Nike Pegasus 41 Nam - Xám Xanh</title>
+    <link rel="stylesheet" href="~/Content/ChiTietSanPham.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-images">
+
+            <div class="image-thumbnails">
+                <img src="~/Content/IMG/giayden.jpg" alt="Shoe image 1">
+                <img src="~/Content/IMG/giayden.jpg" alt="Shoe image 2">
+                <img src="~/Content/IMG/giayden.jpg" alt="Shoe image 3">
+                <img src="~/Content/IMG/giayden.jpg" alt="Shoe image 4">
+                <img src="~/Content/IMG/giayden.jpg" alt="Shoe image 5">
+            </div>
+            <div class="main-image">
+                <img src="~/Content/IMG/giayden.jpg" alt="Main shoe image">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h1>GIÀY NIKE PEGASUS 41 NAM - XÁM XANH</h1>
+            <div class="rating">
+                <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                <span>2 đánh giá</span>
+            </div>
+            <div class="price">
+                <span class="current-price">18.950.000₫</span>
+                <span class="original-price">19.950.000₫</span>
+                <span class="discount">-5%</span>
+            </div>
+            <div class="availability">
+                <span class="status">Kho hàng: CÒN HÀNG</span>
+                <span>Điểm thưởng: 37900</span>
+                <span>Mã sản phẩm: MSN1351</span>
+            </div>
+            <div class="size-selection">
+                <label>Chọn size</label>
+                <button>40</button>
+                <button>42.5</button>
+                <button>43</button>
+                <a href="#">Hướng dẫn chọn size</a>
+            </div>
+            <div class="quantity-selection">
+                <label>Số lượng</label>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="actions">
+                <button class="add-to-cart">THÊM VÀO GIỎ</button>
+                <button class="buy-now">MUA HÀNG NGAY</button>
+            </div>
+            <div class="why-choose">
+                <h3>TẠI SAO KHÁCH HÀNG LỰA CHỌN MYSHOES?</h3>
+                <ul>
+                    <li>100% Hàng chính hãng, giấy chứng nhận chính hãng</li>
+                    <li>Đổi hàng trong 30 ngày, bảo hành 1 năm, hậu mãi trọn đời</li>
+                    <li>Uy tín hơn 8 năm được khẳng định trên toàn quốc</li>
+                    <li>Hơn 60.000 khách hàng đã tin tưởng lựa chọn Myshoes.vn</li>
+                    <li>Nhân viên tư vấn tận tình, dịch vụ khách hàng tốt nhất</li>
+                    <li>99% khách hàng hài lòng về chất lượng sản phẩm, dịch vụ</li>
+                    <li>Miễn phí vận chuyển toàn quốc với đơn trên 500.000đ</li>
+                    <li>Giá cả hợp lý, hệ thống điểm thưởng, quà tặng hấp dẫn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="review-container">
+        <!-- Phần hiển thị đánh giá -->
+        <div class="review-list">
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Tiến</span>
+                    <span class="review-date">03/09/2024</span>
+                </div>
+                <p>Chỉ tin tưởng mua hàng Myshoes nên đợi để có đôi này. Đã mua và rất ưng, 10 điểm nhé!</p>
+                <div class="star-rating">
+                    ★★★★★
+                </div>
+            </div>
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Tùng Vũ</span>
+                    <span class="review-date">25/08/2024</span>
+                </div>
+                <p>Tôi không thể nào không kể về cảm giác khi đi trên đôi giày này...</p>
+                <div class="star-rating">
+                    ★★★★★
+                </div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="~/Content/DanhGiaSanPham.css">
+        <!-- Phần nhập đánh giá -->
+        <div class="review-form">
+            <input type="text" placeholder="Tên bạn">
+            <textarea placeholder="Đánh giá của bạn"></textarea>
+            <p class="note">Lưu ý: không hỗ trợ HTML!</p>
+            <div class="rating-options">
+                <span>Xấu</span>
+                <input type="radio" name="rating" value="1">
+                <input type="radio" name="rating" value="2">
+                <input type="radio" name="rating" value="3">
+                <input type="radio" name="rating" value="4">
+                <input type="radio" name="rating" value="5">
+                <span>Tốt</span>
+            </div>
+            <button class="submit-button">TIẾP TỤC</button>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -51,8 +51,8 @@ namespace ThucHanhLanCuoi.Controllers
                 .ToList();
 
             // Đoạn code lấy danh sách sản phẩm mới với phân trang
-            int pageNumber = page ?? 1; 
-            int pageSize = 6;  
+            int pageNumber = page ?? 1;
+            int pageSize = 6;
             model.NewProducts = productsQuery
           .AsEnumerable()
           .OrderByDescending(p => p.DateAdded)

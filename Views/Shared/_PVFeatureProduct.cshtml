@@ -1,0 +1,87 @@
+﻿@model ThucHanhLanCuoi.Models.ViewModel.HomeProductVM
+
+@if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
+{
+    <section class="container-fluid featureProd">
+        <h1>Sản phẩm nổi bật</h1>
+        <div class="feature-container">
+            @foreach (var product in Model.FeaturedProducts)
+            {
+                <div class="product-item">
+                    <a href="@Url.Action("ProductDetails", "Home", new { id = product.ProductID })">
+                        <img src="@Html.DisplayFor(modelItem => product.ProductImage)" alt="Product Image" />
+                    </a>
+                    <div class="product-info">
+                        <p class="prodName">@Html.DisplayFor(modelItem => product.ProductName)</p>
+                        <p class="prodCate">@Html.DisplayFor(modelItem => product.Category.CategoryName)</p>
+                        <p class="prodPrice">@Html.DisplayFor(modelItem => product.ProductPrice)</p>
+                        <p class="prodSale">Đã bán:&nbsp;@Html.DisplayFor(modelItem => product.OrderDetails.Count)</p>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+else
+{
+    <p>Không tìm được sản phẩm nào phù hợp.</p>
+}
+
+<hr />
+<style type="text/css">
+    .feature-container {
+        display: flex;
+        overflow-x: auto; /* Tạo thanh cuộn ngang */
+        gap: 10px; /* Khoảng cách giữa các sản phẩm */
+        padding: 10px;
+    }
+
+    .product-item {
+        min-width: 150px; /* Độ rộng cố định cho từng sản phẩm */
+        border: 1px solid #ddd; /* Đường viền cho từng khối sản phẩm */
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #f9f9f9; /* Màu nền cho sản phẩm */
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng cho sản phẩm */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .product-item img {
+            width: 100px; /* Thu nhỏ kích thước ảnh */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+    .product-info {
+        text-align: center;
+    }
+
+    .prodName {
+        font-size: 14px;
+        margin: 5px 0;
+        max-width: 150px;
+        max-height: 40px; /* Chiều cao tối đa để hiển thị một số dòng nhất định */
+        overflow: hidden; /* Ẩn phần vượt quá */
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+
+    .prodCate {
+        font-size: 19px;
+        color: #777;
+        margin: 5px 0;
+    }
+
+    .prodPrice {
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 5px 0;
+    }
+</style>

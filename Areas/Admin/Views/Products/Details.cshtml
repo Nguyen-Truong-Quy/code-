@@ -1,0 +1,17 @@
+﻿@model ThucHanhLanCuoi.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">CHI TIẾT SẢN PHẨM</h2>
+
+@Html.Partial("PVProductInfo", Model)
+<div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+        @Html.ActionLink("Cập nhật", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" })
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        @Html.ActionLink("Xóa", "Delete", new { id = Model.ProductID }, new { @class = "btn btn-danger" })
+    </div>
+</div>

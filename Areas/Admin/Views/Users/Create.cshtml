@@ -1,0 +1,81 @@
+﻿@model ThucHanhLanCuoi.Models.User
+
+@{
+    ViewBag.Title = "Tạo tài khoản";
+}
+
+<h2>Tạo tài khoản phân quyền Admin</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>User</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+         @Html.Partial("_PVCreateEditUsers",Model)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tạo tài khoản" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-group">
+    <div class="col-md-12 text-center">
+        @Html.ActionLink("Quay lại danh sách", "Index", new { @class = "btn btn-secondary" })
+    </div>
+</div>
+
+<!-- CSS cải tiến -->
+<style>
+    .form-horizontal .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    h4 {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .col-md-10 {
+        margin-bottom: 10px;
+    }
+</style>

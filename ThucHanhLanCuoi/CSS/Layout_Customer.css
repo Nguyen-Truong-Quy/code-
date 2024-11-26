@@ -1,0 +1,218 @@
+﻿body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Top-Header {
+    background-color: #003b73;
+    color: white;
+    padding: 10px 30px;
+    display: flex; /*sấp sếp bố cục thành hàng ngang*/
+    justify-content: space-between;/* <--căn lề theo chiều ngang  -->*/
+    align-items: center; /*căn giữa*/
+}
+
+.Logo {
+    display: flex;
+    align-items: center; /*căn logo vào giữa khối div*/
+}
+
+    .Logo a {
+        text-decoration: none; /*loại bỏ gạch chân khi dùng thẻ a*/
+        font-size: 24px;
+        color: white;
+        font-weight: bold; /* chữ in đậm hơn */
+    }
+
+    .Logo .logo-vn {
+        color: red;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 3px;
+    }
+
+.ThanhTimKiem {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden; /*ẩn các string vượt quá chiều dài*/
+    width: 50%;
+}
+
+        .ThanhTimKiem input {
+            border: none;
+            padding: 10px 15px;
+            flex: 1; /*dùng chiếm hết không gian còn nếu dư */
+            outline: none;
+        }
+
+    .ThanhTimKiem button {
+        background: none;
+        border: none;
+        color: #003b73;
+        padding: 0 15px;
+        cursor: pointer; /*chuyển đổi con trỏ chuột thành ngón tay*/
+    }
+
+.Menu-Top {
+    display: flex;
+    align-items: center;
+    gap: 30px; /*căn lề khoáng cách các phần tử*/
+}
+
+    .Menu-Top a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        display: flex; /*dàn các mục thành hàng ngang*/
+        align-items: center;
+    }
+
+    .Menu-Top .account {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .Menu-Top .account i {
+            font-size: 18px; /*icon người dùng chỉnh kích thưcs*/
+        }
+        .Menu-Top .account .account-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .Menu-Top .account .account-details {
+            display: flex;
+            flex-direction: column;/*chuyển hướng sắp sếp các phần tử từ ngang sang dọc*/
+        }
+        .Menu-Top .account .account-links {
+            color: black;
+            font-size: 12px;
+        }
+
+    .Menu-Top .store {
+        position: relative;
+    }
+
+        .Menu-Top .store i {
+            font-size: 18px; /*icon giỏ hàng*/
+        }
+
+        .Menu-Top .store .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; /* Add position relative for the account box */
+}
+
+.accountBox {
+    display: none; /*mặc định là sẽ không hiện lên layout*/
+    position: absolute;
+    top: 100%; /*đẩy khối accountBox xuống dưới khối cha*/
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000; /*đảm bảo khối này hiện trên các khối khác*/
+    width: 120px; /*đặt chiều dài cho khối*/
+}
+
+.account:hover .accountBox {
+    display: block; /*hiển accountBox khi lia chuột vào*/
+}
+
+.accountBox .account-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.accountBox .account-links {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+/*-------------------------Header-Botton--------------------------------------*/
+.header-bottom {
+    background-color: #003b73;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MucLucGiay {
+    list-style: none; /*Loại bỏ dấu đầu dòng mặc định của danh sách */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+    .MucLucGiay li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .MucLucGiay a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+    }
+
+.label.new {
+    background-color: #4caf50;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.label.sale {
+    background-color: #e53935;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.icon-sale {
+    background-color: #e53935;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 50%;
+}
+
+.Right-Menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+    .Right-Menu a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+

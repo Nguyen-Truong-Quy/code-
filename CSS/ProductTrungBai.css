@@ -1,0 +1,73 @@
+﻿/* CSS cho phần sản phẩm mới */
+.products-section {
+    margin: 20px; /* Khoảng cách bên ngoài */
+}
+
+.new-products-title {
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách phía dưới tiêu đề */
+    font-size: 24px; /* Kích thước chữ tiêu đề */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.new-products {
+    display: flex; /* Sử dụng Flexbox để dễ dàng quản lý hàng hóa */
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng nếu không đủ không gian */
+    justify-content: space-between; /* Đảm bảo khoảng cách đều giữa các sản phẩm */
+}
+
+/* Phong cách cho từng mục sản phẩm */
+.product-item {
+    position: relative;
+    display: inline-block;
+    width: calc(20% - 20px); /* Đảm bảo mỗi sản phẩm chiếm 20% chiều rộng */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Đường viền nhẹ */
+    border-radius: 10px; /* Bo góc */
+    background-color: #f8f9fa; /* Màu nền */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính trong chiều rộng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng phóng to và đổ bóng */
+}
+
+    /* Tạo hiệu ứng phóng to và đổ bóng khi hover vào mục sản phẩm */
+    .product-item:hover {
+        transform: scale(1.05); /* Phóng to 5% */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Đổ bóng rõ hơn */
+    }
+
+/* Định dạng cho hình ảnh sản phẩm */
+.product-image {
+    max-width: 100%; /* Đảm bảo hình ảnh tự động điều chỉnh kích thước */
+    height: auto;
+    border-radius: 10px; /* Bo góc cho hình ảnh */
+    transition: transform 0.3s ease; /* Hiệu ứng phóng to mượt mà */
+}
+
+/* Phóng to hình ảnh khi hover vào mục sản phẩm */
+.product-item:hover .product-image {
+    transform: scale(1.1); /* Phóng to riêng hình ảnh */
+}
+
+/* Định dạng cho các nhãn (label) */
+.labels {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.label {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Định dạng cho giảm giá */
+.discount-percentage {
+    color: #d9534f; /* Màu chữ đỏ */
+    font-weight: bold;
+    margin-top: 10px;
+}

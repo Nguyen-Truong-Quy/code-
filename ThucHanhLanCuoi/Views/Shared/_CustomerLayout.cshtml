@@ -1,4 +1,5 @@
-﻿ <!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -6,229 +7,7 @@
     <title>Myshoes.vn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .Top-Header {
-            background-color: #003b73;
-            color: white;
-            padding: 10px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .Logo {
-            display: flex;
-            align-items: center;
-        }
-
-            .Logo a {
-                text-decoration: none;
-                font-size: 24px;
-                color: white;
-                font-weight: bold;
-            }
-
-            .Logo .logo-vn {
-                color: red;
-                font-size: 18px;
-                font-weight: bold;
-                margin-left: 3px;
-            }
-
-        .ThanhTimKiem {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            border-radius: 20px;
-            overflow: hidden;
-            width: 50%;
-        }
-
-            .ThanhTimKiem input {
-                border: none;
-                padding: 10px 15px;
-                flex: 1;
-                outline: none;
-            }
-
-            .ThanhTimKiem button {
-                background: none;
-                border: none;
-                color: #003b73;
-                padding: 0 15px;
-                cursor: pointer;
-            }
-
-        .Menu-Top {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-            .Menu-Top a {
-                text-decoration: none;
-                color: white;
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-            }
-
-            .Menu-Top .account {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-                .Menu-Top .account i {
-                    font-size: 18px;
-                }
-
-                .Menu-Top .account .account-details {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .Menu-Top .account .account-title {
-                    font-weight: bold;
-                   
-                    font-size: 14px;
-                }
-
-                .Menu-Top .account .account-links {
-                    color: black;
-                    font-size: 12px;
-                }
-
-            .Menu-Top .store {
-                position: relative;
-            }
-
-                .Menu-Top .store i {
-                    font-size: 18px;
-                }
-
-                .Menu-Top .store .cart-count {
-                    position: absolute;
-                    top: -5px;
-                    right: -10px;
-                    background-color: red;
-                    color: white;
-                    font-size: 12px;
-                    padding: 2px 6px;
-                    border-radius: 50%;
-                }
-
-        .header-bottom {
-            background-color: #003b73;
-            padding: 10px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .MucLucGiay {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-            .MucLucGiay li {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-
-            .MucLucGiay a {
-                text-decoration: none;
-                color: white;
-                font-size: 14px;
-            }
-
-        .label.new {
-            background-color: #4caf50;
-            color: white;
-            padding: 2px 6px;
-            font-size: 12px;
-            border-radius: 5px;
-        }
-
-        .label.sale {
-            background-color: #e53935;
-            color: white;
-            padding: 2px 6px;
-            font-size: 12px;
-            border-radius: 5px;
-        }
-
-        .icon-sale {
-            background-color: #e53935;
-            color: white;
-            padding: 2px 6px;
-            font-size: 12px;
-            border-radius: 50%;
-        }
-
-        .Right-Menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-            .Right-Menu a {
-                text-decoration: none;
-                color: white;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-
-        .account {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative; /* Add position relative for the account box */
-        }
-
-        .accountBox {
-            display: none; /* Hide by default */
-            position: absolute;
-            top: 100%; /* Push the menu below the account */
-            left: 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            z-index: 1000;
-            width: 100px;
-        }
-
-        .account:hover .accountBox {
-            display: block; /* Show account box when hovering over the account section */
-        }
-
-        .accountBox .account-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color:black;
-        }
-
-        .accountBox .account-links {
-            color: black;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-
-    </style>
+    <link href="~/CSS/Layout_Customer.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Top Header -->
@@ -243,7 +22,7 @@
             <input type="text" placeholder="Tìm kiếm sản phẩm..." />
             <button type="submit">
                 <i class="fa fa-search"></i>
-            </button>   
+            </button>
         </div>
 
         <div class="Menu-Top">
@@ -264,7 +43,7 @@
                     else
                     {
 
-                        <!-- Nếu người dùng đã đăng nhập -->      
+                        <!-- Nếu người dùng đã đăng nhập -->
                         <a href="@Url.Action("Login", "Account")" class="account-links">Đăng nhập</a>
                         <a href="@Url.Action("Register", "Account")" class="account-links">Đăng ký</a>
                     }

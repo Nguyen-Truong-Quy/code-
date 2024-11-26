@@ -6,11 +6,10 @@ using System.Web.Mvc;
 using ThucHanhLanCuoi.Models;
 using PagedList;
 using ThucHanhLanCuoi.Models.ViewModel;
-using PagedList.Mvc;
 
 namespace ThucHanhLanCuoi.Areas.Admin.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : Controller                                    
     {
         private QuanLyEntities db = new QuanLyEntities();
 
@@ -21,26 +20,30 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             var model = new ProductSearchVM();
             var products = db.Products.AsQueryable();
 
+            // Search products based on search term
             if (!string.IsNullOrEmpty(searchTerm))
-            {   // Tìm kiếm sản phẩm dựa trên từ khóa
+            {
                 model.SearchTerm = searchTerm;
                 products = products.Where(p => p.ProductName.Contains(searchTerm) ||
-                 p.ProductDescription.Contains(searchTerm) ||
-                 p.Category.CategoryName.Contains(searchTerm));
+                                                p.ProductDescription.Contains(searchTerm) ||
+                                                p.Category.CategoryName.Contains(searchTerm));
             }
-            // tìm kiếm sản phẩm dựa trên giá tối thiểu 
+
+            // Filter by minimum price
             if (minPrice.HasValue)
             {
                 model.MinPrice = minPrice.Value;
                 products = products.Where(p => p.ProductPrice >= minPrice.Value);
             }
-            // tìm kiếm sản phẩm dựa trên giá tối đa 
+
+            // Filter by maximum price
             if (maxPrice.HasValue)
             {
                 model.MaxPrice = maxPrice.Value;
-                products = products.Where(p => p.ProductPrice >= maxPrice.Value);
+                products = products.Where(p => p.ProductPrice <= maxPrice.Value);
             }
-            //Áp dụng sắp xếp dựa trên lựa chọn của người dùng
+
+            // Sorting based on user selection
             switch (sortOrder)
             {
                 case "name-asc":
@@ -53,27 +56,23 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
                     products = products.OrderBy(p => p.ProductPrice);
                     break;
                 case "price_desc":
-                    products = products.OrderByDescending(p => p.ProductDescription);
+                    products = products.OrderByDescending(p => p.ProductPrice);
                     break;
-                default://mạc đinh sắp xếp theo tên 
+                default: // Default sorting by product name
                     products = products.OrderBy(p => p.ProductName);
                     break;
             }
-            model.SortOrder = sortOrder;
-            //Đoạn code liên quan đến phân trang
-            //Lấy số trnag hiện tại(mặc định là trnag 1 nếu không có giá trị)
-            int pageNumber = page ?? 1;
-            int pageSize = 5; // số sản phẩm mỗi trang
 
-            //Đóng câu lệnh này, sử dụng ToPageList để lấy dang sách đã phân trang
-            //Model.Products=Products.Tolist()
+            model.SortOrder = sortOrder;
+
+            // Pagination logic
+            int pageNumber = page ?? 1;
+            int pageSize = 5; // Set products per page
+
+            // Get the products with pagination
             model.Products = products.ToPagedList(pageNumber, pageSize);
-            return View(model); // Trả về model
+            return View(model);
         }
-        //{
-        //    var products = db.Products.Include(p => p.Category);
-        //    return View(products.ToList());
-        //}
 
         // GET: Admin/Products/Details/5
         public ActionResult Details(int? id)
@@ -82,11 +81,13 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+
+            var product = db.Products.FirstOrDefault(p => p.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
             }
+
             return View(product);
         }
 
@@ -98,22 +99,30 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
         }
 
         // POST: Admin/Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductID,CategoryID,ProductName,ProductPrice,ProductImage,ProductDescription")] Product product)
         {
             if (ModelState.IsValid)
             {
-                // Loại bỏ dấu phẩy trong ProductPrice trước khi lưu
-                product.ProductPrice = decimal.Parse(product.ProductPrice.ToString().Replace(",", string.Empty));
+                // Remove commas from ProductPrice before saving
+                if (decimal.TryParse(product.ProductPrice.ToString().Replace(",", string.Empty), out decimal price))
+                {
+                    product.ProductPrice = price;
+                }
+                else
+                {
+                    ModelState.AddModelError("ProductPrice", "Giá sản phẩm không hợp lệ.");
+                    ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
+                    return View(product);
+                }
 
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            // Return the categories to the view for re-population of dropdown
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
             return View(product);
         }
@@ -125,18 +134,18 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+
+            var product = db.Products.FirstOrDefault(p => p.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
             }
+
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
             return View(product);
         }
 
         // POST: Admin/Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductID,CategoryID,ProductName,ProductPrice,ProductImage,ProductDescription")] Product product)
@@ -147,12 +156,12 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
             return View(product);
         }
 
         // GET: Admin/Products/Delete/5
-        // GET: Product/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -160,26 +169,14 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var product = db.Products.Find(id);
+            var product = db.Products.FirstOrDefault(p => p.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
             }
 
-            // Pass the product to the confirmation view
             return View(product);
         }
-        // này là xóa hẳn không hoi 
-        //public ActionResult Delete(int id)
-        //{
-        //    var product = db.Products.Find(id);
-        //    if (product != null)
-        //    {
-        //        db.Products.Remove(product);
-        //        db.SaveChanges();
-        //    }
-        //    return RedirectToAction("Index");
-        //}
 
         // POST: Admin/Products/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -200,9 +197,5 @@ namespace ThucHanhLanCuoi.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
-      
-          
-       
-
     }
 }

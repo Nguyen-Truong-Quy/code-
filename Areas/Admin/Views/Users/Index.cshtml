@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ThucHanhLanCuoi.Models.User>
+
+@{
+    ViewBag.Title = "Thông tin ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div aligh-item="center">
+    <h2>Thông tin </h2>
+    <h2> Tài Khoản-Mật Khẩu</h2>
+</div>
+
+
+<p>
+    @Html.ActionLink("Tạo 1 thông account", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tài Khoản
+        </th>
+        <th>
+            Mật Khẩu
+        </th>
+        <th>
+            Phân Quyền
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Username }, new { @class = "text-danger" }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Username }, new { @class = "text-danger" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.Username }, new { @class = "text-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

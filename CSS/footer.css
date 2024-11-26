@@ -1,0 +1,86 @@
+﻿.subscribe-container {
+    display: flex;
+    max-width: 100%;
+    background-color: #0c385f;
+    color: white;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.ThongTin {
+    flex: 1;
+    padding-right: 20px;
+}
+
+    .ThongTin h3 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .ThongTin p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+.FooterFillForm {
+    flex: 1;
+    background-color: #0c385f;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .subscribe-form input[type="email"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 70%;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .subscribe-form button {
+        background-color: #d12d2d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+        .subscribe-form button i {
+            margin-right: 5px;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #b22222;
+        }
+
+.checkboxsite {
+    font-size: 14px;
+}
+
+    .checkboxsite input {
+        margin-right: 5px;
+    }
+
+    .checkboxsite a {
+        color: white;
+        text-decoration: underline;
+    }
+
+        .checkboxsite a:hover {
+            color: #b22222;
+        }
